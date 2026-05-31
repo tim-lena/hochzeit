@@ -28,6 +28,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* ===== Header ===== */
@@ -79,6 +81,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    gap: 0;
 }
 
 .tab-button {
@@ -91,6 +94,7 @@ body {
     transition: all 0.3s ease;
     border-bottom: 3px solid transparent;
     font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .tab-button:hover {
@@ -102,6 +106,11 @@ body {
     color: var(--dunkel-rosa);
     border-bottom-color: var(--dunkel-rosa);
     font-weight: 600;
+}
+
+.tab-button:focus {
+    outline: 2px solid var(--altrosa);
+    outline-offset: -2px;
 }
 
 /* ===== Main Content ===== */
@@ -274,6 +283,52 @@ body {
     font-size: 1rem;
 }
 
+/* Timeline Divider für Freizeit */
+.timeline-divider {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 2rem;
+}
+
+.timeline-divider::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--rosa);
+    border: 2px solid var(--weiss);
+    box-shadow: 0 0 0 2px var(--altrosa);
+}
+
+.freizeit-text {
+    background: linear-gradient(135deg, var(--hellgrau) 0%, #FFFFFF 100%);
+    color: var(--dunkel-rosa);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-style: italic;
+    font-size: 0.95rem;
+    border-left: 4px solid var(--altrosa);
+    box-shadow: 0 2px 6px var(--schatten);
+}
+
+.spiele-link {
+    color: var(--dunkel-rosa);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--altrosa);
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.spiele-link:hover {
+    color: var(--rosa);
+    border-bottom-color: var(--rosa);
+}
+
 /* ===== Spiele Tab ===== */
 .games-container {
     display: flex;
@@ -303,10 +358,15 @@ body {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .game-header:hover {
     background-color: var(--hellgrau);
+}
+
+.game-header:active {
+    background-color: #F0F0F0;
 }
 
 .game-header h3 {
@@ -446,6 +506,10 @@ body {
 
 /* ===== Responsive Design ===== */
 @media (max-width: 768px) {
+    .header {
+        padding: 1.75rem 1rem;
+    }
+
     .header h1 {
         font-size: 2rem;
     }
@@ -460,6 +524,7 @@ body {
 
     .welcome-title {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     .welcome-text {
@@ -467,9 +532,9 @@ body {
     }
 
     .tab-button {
-        padding: 0.75rem 0.8rem;
-        font-size: 0.9rem;
-        flex: 1;
+        padding: 0.75rem 0.7rem;
+        font-size: 0.85rem;
+        flex: 1 1 auto;
         min-width: 0;
     }
 
@@ -479,6 +544,7 @@ body {
 
     .tab-content h2 {
         font-size: 1.5rem;
+        margin-bottom: 1.25rem;
     }
 
     .timeline {
@@ -487,6 +553,21 @@ body {
 
     .timeline-item {
         padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .timeline-content {
+        padding: 1.25rem;
+    }
+
+    .timeline-divider {
+        margin: 1.5rem 0;
+        padding-left: 1.5rem;
+    }
+
+    .freizeit-text {
+        padding: 0.9rem 1.25rem;
+        font-size: 0.9rem;
     }
 
     .drinks-container,
@@ -495,8 +576,36 @@ body {
         padding: 1.5rem;
     }
 
+    .game-header {
+        padding: 1.25rem 1rem;
+    }
+
     .game-header h3 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        line-height: 1.3;
+    }
+
+    .game-content {
+        padding: 0 1rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .game-card.active .game-content {
+        padding: 0 1rem 1.25rem 1rem;
+    }
+
+    .game-content h4 {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+
+    .game-content ul {
+        padding-left: 1.25rem;
+    }
+
+    .game-content li {
+        margin-bottom: 0.6rem;
     }
 
     .music-box h3,
@@ -511,6 +620,11 @@ body {
     .spotify-button,
     .photos-button {
         min-height: 44px;
+    }
+
+    /* Home-Bild auf Tablet */
+    .home-image-wrapper {
+        margin: 1.75rem 0;
     }
 }
 
@@ -528,13 +642,20 @@ body {
         font-size: 1.4rem;
     }
 
+    .header .date {
+        font-size: 0.95rem;
+    }
+
     .welcome-title {
         font-size: 1.6rem;
+        margin-bottom: 1.25rem;
+        padding: 0 0.5rem;
     }
 
     .welcome-text {
         font-size: 1rem;
         margin-top: 1.5rem;
+        padding: 0 0.5rem;
     }
 
     .home-image-wrapper {
@@ -546,39 +667,127 @@ body {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         justify-content: flex-start;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+
+    .tab-navigation::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
     }
 
     .tab-button {
-        padding: 0.7rem 0.6rem;
-        font-size: 0.85rem;
+        padding: 0.7rem 0.65rem;
+        font-size: 0.8rem;
         white-space: nowrap;
+        flex: 0 0 auto;
+        min-width: fit-content;
     }
 
     .content-container {
         padding: 1rem 0.75rem;
     }
 
-    .timeline-content h3 {
-        font-size: 1.1rem;
+    .tab-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .timeline {
+        padding-left: 1.25rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.25rem;
+        margin-bottom: 1.25rem;
     }
 
     .timeline-content {
         padding: 1rem;
     }
 
-    .game-header {
-        padding: 1rem;
+    .timeline-content h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.4rem;
     }
 
-    .game-header h3 {
+    .timeline-time {
         font-size: 1rem;
     }
 
-    .game-content {
+    .timeline-divider {
+        margin: 1.25rem 0;
+        padding-left: 1.25rem;
+    }
+
+    .timeline-divider::before {
+        left: -0.4rem;
+        width: 0.65rem;
+        height: 0.65rem;
+    }
+
+    .freizeit-text {
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .drinks-container {
+        padding: 1rem;
+    }
+
+    .drinks-image {
+        margin-bottom: 1rem;
+    }
+
+    .download-button {
+        padding: 0.65rem 1.75rem;
         font-size: 0.95rem;
     }
 
-    .drinks-container,
+    .game-header {
+        padding: 1rem 0.85rem;
+    }
+
+    .game-header h3 {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        padding-right: 0.5rem;
+    }
+
+    .accordion-icon {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+
+    .game-content {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        padding: 0 0.85rem;
+    }
+
+    .game-card.active .game-content {
+        padding: 0 0.85rem 1rem 0.85rem;
+    }
+
+    .game-content h4 {
+        font-size: 0.95rem;
+        margin-top: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .game-content p {
+        margin-bottom: 0.85rem;
+    }
+
+    .game-content ul {
+        padding-left: 1.1rem;
+    }
+
+    .game-content li {
+        margin-bottom: 0.5rem;
+        font-size: 0.88rem;
+    }
+
     .music-box,
     .photos-box {
         padding: 1.25rem;
@@ -586,12 +795,33 @@ body {
 
     .music-intro,
     .photos-intro {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .music-box h3,
+    .photos-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .music-box p,
+    .photos-box p {
+        font-size: 0.9rem;
     }
 
     .spotify-button,
     .photos-button {
-        padding: 0.85rem 2rem;
-        font-size: 1rem;
+        padding: 0.85rem 1.85rem;
+        font-size: 0.95rem;
+    }
+
+    .music-note,
+    .photos-note {
+        font-size: 0.85rem;
+    }
+
+    .footer {
+        padding: 1.25rem;
+        font-size: 0.85rem;
     }
 }
