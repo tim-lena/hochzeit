@@ -225,7 +225,7 @@ body {
 /* ===== Ablauf Tab ===== */
 .timeline {
     position: relative;
-    padding-left: 2rem;
+    padding-left: 3rem;
 }
 
 .timeline::before {
@@ -234,41 +234,57 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 3px;
+    width: 4px;
     background: linear-gradient(to bottom, var(--rosa), var(--altrosa), var(--dunkel-rosa));
+    border-radius: 2px;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     padding-left: 2rem;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -0.65rem;
-    top: 0.25rem;
-    width: 1rem;
-    height: 1rem;
+    left: -1rem;
+    top: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
-    background-color: var(--dunkel-rosa);
-    border: 3px solid var(--weiss);
-    box-shadow: 0 0 0 3px var(--rosa);
+    background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
+    border: 4px solid var(--weiss);
+    box-shadow: 0 0 0 4px var(--rosa), 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 2;
 }
 
 .timeline-time {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--dunkel-rosa);
-    margin-bottom: 0.5rem;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
+    color: var(--weiss);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 3px 10px rgba(181, 131, 141, 0.3);
+    letter-spacing: 0.5px;
 }
 
 .timeline-content {
     background-color: var(--weiss);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px var(--schatten);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--schatten);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--altrosa);
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-left-color: var(--dunkel-rosa);
 }
 
 .timeline-content h3 {
@@ -286,33 +302,34 @@ body {
 /* Timeline Divider für Freizeit */
 .timeline-divider {
     position: relative;
-    margin: 2rem 0;
+    margin: 3rem 0;
     padding-left: 2rem;
 }
 
 .timeline-divider::before {
     content: '';
     position: absolute;
-    left: -0.5rem;
+    left: -0.95rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 1.2rem;
+    height: 1.2rem;
     border-radius: 50%;
-    background-color: var(--rosa);
-    border: 2px solid var(--weiss);
-    box-shadow: 0 0 0 2px var(--altrosa);
+    background: linear-gradient(135deg, var(--rosa) 0%, var(--altrosa) 100%);
+    border: 3px solid var(--weiss);
+    box-shadow: 0 0 0 3px var(--rosa), 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .freizeit-text {
-    background: linear-gradient(135deg, var(--hellgrau) 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #FFF5F8 0%, var(--hellgrau) 100%);
     color: var(--dunkel-rosa);
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
     font-style: italic;
-    font-size: 0.95rem;
-    border-left: 4px solid var(--altrosa);
-    box-shadow: 0 2px 6px var(--schatten);
+    font-size: 1rem;
+    border-left: 5px solid var(--altrosa);
+    box-shadow: 0 4px 12px var(--schatten);
+    line-height: 1.7;
 }
 
 .spiele-link {
@@ -414,13 +431,16 @@ body {
 }
 
 .game-content ul {
-    list-style-position: inside;
+    list-style-position: outside;
     color: var(--text-hell);
-    padding-left: 1rem;
+    padding-left: 1.5rem;
+    margin-left: 0;
 }
 
 .game-content li {
     margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    line-height: 1.6;
 }
 
 /* ===== Musik Tab ===== */
@@ -720,26 +740,56 @@ body {
     }
 
     .timeline {
-        padding-left: 1.5rem;
+        padding-left: 2.5rem;
+    }
+
+    .timeline::before {
+        width: 3px;
     }
 
     .timeline-item {
-        padding-left: 1.5rem;
-        margin-bottom: 1.5rem;
+        padding-left: 1.75rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+        width: 1.3rem;
+        height: 1.3rem;
+        left: -0.9rem;
+        border-width: 3px;
+        box-shadow: 0 0 0 3px var(--rosa), 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .timeline-time {
+        font-size: 1.1rem;
+        padding: 0.45rem 1.1rem;
     }
 
     .timeline-content {
-        padding: 1.25rem;
+        padding: 1.5rem;
+        border-left-width: 3px;
+    }
+
+    .timeline-content:hover {
+        transform: none;
     }
 
     .timeline-divider {
-        margin: 1.5rem 0;
-        padding-left: 1.5rem;
+        margin: 2.5rem 0;
+        padding-left: 1.75rem;
+    }
+
+    .timeline-divider::before {
+        left: -0.85rem;
+        width: 1rem;
+        height: 1rem;
+        border-width: 2.5px;
     }
 
     .freizeit-text {
-        padding: 0.9rem 1.25rem;
-        font-size: 0.9rem;
+        padding: 1.25rem 1.5rem;
+        font-size: 0.95rem;
+        border-left-width: 4px;
     }
 
     .drinks-container,
@@ -778,6 +828,7 @@ body {
 
     .game-content li {
         margin-bottom: 0.6rem;
+        padding-left: 0.4rem;
     }
 
     .music-box h3,
@@ -930,21 +981,48 @@ body {
     }
 
     .timeline {
-        padding-left: 1.25rem;
+        padding-left: 2rem;
+    }
+
+    .timeline::before {
+        width: 3px;
     }
 
     .timeline-item {
-        padding-left: 1.25rem;
-        margin-bottom: 1.25rem;
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+        width: 1.1rem;
+        height: 1.1rem;
+        left: -0.8rem;
+        top: 0.4rem;
+        border-width: 3px;
+        box-shadow: 0 0 0 2.5px var(--rosa), 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-time {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
     }
 
     .timeline-content {
-        padding: 1rem;
+        padding: 1.25rem;
+        border-radius: 10px;
+    }
+
+    .timeline-content:hover {
+        transform: none;
     }
 
     .timeline-content h3 {
-        font-size: 1.05rem;
+        font-size: 1.1rem;
         margin-bottom: 0.4rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.95rem;
     }
 
     .timeline-time {
@@ -952,20 +1030,23 @@ body {
     }
 
     .timeline-divider {
-        margin: 1.25rem 0;
-        padding-left: 1.25rem;
+        margin: 2rem 0;
+        padding-left: 1.5rem;
     }
 
     .timeline-divider::before {
-        left: -0.4rem;
-        width: 0.65rem;
-        height: 0.65rem;
+        left: -0.75rem;
+        width: 0.85rem;
+        height: 0.85rem;
+        border-width: 2px;
     }
 
     .freizeit-text {
-        padding: 0.8rem 1rem;
-        font-size: 0.85rem;
-        line-height: 1.5;
+        padding: 1rem 1.25rem;
+        font-size: 0.88rem;
+        line-height: 1.6;
+        border-left-width: 3px;
+        border-radius: 10px;
     }
 
     .drinks-container {
@@ -1023,6 +1104,8 @@ body {
     .game-content li {
         margin-bottom: 0.5rem;
         font-size: 0.88rem;
+        padding-left: 0.3rem;
+        line-height: 1.5;
     }
 
     .music-box,
@@ -1201,5 +1284,25 @@ body {
         width: 2.5rem;
         height: 2.5rem;
         font-size: 1.2rem;
+    }
+
+    .timeline-item::before {
+        width: 1rem;
+        height: 1rem;
+        left: -0.75rem;
+    }
+
+    .timeline-time {
+        font-size: 0.9rem;
+        padding: 0.35rem 0.9rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .freizeit-text {
+        padding: 0.9rem 1rem;
+        font-size: 0.82rem;
     }
 }
