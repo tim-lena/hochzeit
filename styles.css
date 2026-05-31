@@ -1,0 +1,462 @@
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rosa: #FFC0CB;
+    --altrosa: #E5989B;
+    --dunkel-rosa: #B5838D;
+    --hellgrau: #F9F9F9;
+    --weiss: #FFFFFF;
+    --text-dunkel: #333333;
+    --text-hell: #666666;
+    --schatten: rgba(0, 0, 0, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--hellgrau);
+    color: var(--text-dunkel);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+.header {
+    background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
+    color: var(--weiss);
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 10px var(--schatten);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.header .date {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+/* ===== Tab Navigation ===== */
+.tab-navigation {
+    background-color: var(--weiss);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px var(--schatten);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    color: var(--text-hell);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+}
+
+.tab-button:hover {
+    color: var(--dunkel-rosa);
+    background-color: var(--hellgrau);
+}
+
+.tab-button.active {
+    color: var(--dunkel-rosa);
+    border-bottom-color: var(--dunkel-rosa);
+    font-weight: 600;
+}
+
+/* ===== Main Content ===== */
+.content-container {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content h2 {
+    font-size: 2rem;
+    color: var(--dunkel-rosa);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* ===== Getränkekarte Tab ===== */
+.drinks-container {
+    background-color: var(--weiss);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px var(--schatten);
+    text-align: center;
+}
+
+.drinks-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 10px var(--schatten);
+}
+
+.download-button {
+    display: inline-block;
+    background-color: var(--dunkel-rosa);
+    color: var(--weiss);
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--schatten);
+}
+
+.download-button:hover {
+    background-color: var(--altrosa);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--schatten);
+}
+
+/* ===== Ablauf Tab ===== */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--rosa), var(--altrosa), var(--dunkel-rosa));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.65rem;
+    top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--dunkel-rosa);
+    border: 3px solid var(--weiss);
+    box-shadow: 0 0 0 3px var(--rosa);
+}
+
+.timeline-time {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dunkel-rosa);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background-color: var(--weiss);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--schatten);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: var(--text-dunkel);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    color: var(--text-hell);
+    font-size: 1rem;
+}
+
+/* ===== Spiele Tab ===== */
+.games-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.game-card {
+    background-color: var(--weiss);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--schatten);
+    transition: box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    box-shadow: 0 4px 15px var(--schatten);
+}
+
+.game-header {
+    width: 100%;
+    background-color: var(--weiss);
+    border: none;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.game-header:hover {
+    background-color: var(--hellgrau);
+}
+
+.game-header h3 {
+    font-size: 1.3rem;
+    color: var(--dunkel-rosa);
+    font-weight: 500;
+    text-align: left;
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    color: var(--dunkel-rosa);
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.game-card.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.game-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 1.5rem;
+}
+
+.game-card.active .game-content {
+    max-height: 1000px;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.game-content h4 {
+    color: var(--dunkel-rosa);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.game-content p {
+    color: var(--text-hell);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.game-content ul {
+    list-style-position: inside;
+    color: var(--text-hell);
+    padding-left: 1rem;
+}
+
+.game-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== Musik Tab ===== */
+.music-container,
+.photos-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.music-intro,
+.photos-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-hell);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.music-box,
+.photos-box {
+    background-color: var(--weiss);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px var(--schatten);
+    text-align: center;
+}
+
+.music-box h3,
+.photos-box h3 {
+    font-size: 1.5rem;
+    color: var(--dunkel-rosa);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.music-box p,
+.photos-box p {
+    color: var(--text-hell);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.spotify-button,
+.photos-button {
+    display: inline-block;
+    background-color: var(--dunkel-rosa);
+    color: var(--weiss);
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--schatten);
+    margin: 1rem 0;
+}
+
+.spotify-button:hover,
+.photos-button:hover {
+    background-color: var(--altrosa);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--schatten);
+}
+
+.music-note,
+.photos-note {
+    font-size: 0.9rem;
+    color: var(--text-hell);
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background-color: var(--weiss);
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-hell);
+    font-size: 0.9rem;
+    border-top: 1px solid #E0E0E0;
+    margin-top: 3rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header .date {
+        font-size: 1rem;
+    }
+
+    .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .content-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .tab-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+
+    .drinks-container,
+    .music-box,
+    .photos-box {
+        padding: 1.5rem;
+    }
+
+    .game-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .music-box h3,
+    .photos-box h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.7rem;
+        letter-spacing: 1px;
+    }
+
+    .tab-button {
+        padding: 0.6rem 0.7rem;
+        font-size: 0.85rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .game-header {
+        padding: 1rem;
+    }
+
+    .game-header h3 {
+        font-size: 1rem;
+    }
+}

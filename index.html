@@ -3,61 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Getränkekarte</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html, body {
-            height: 100%;
-            width: 100%;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-        
-        .container {
-            max-width: 100%;
-            width: 100%;
-            max-height: 100vh;
-        }
-        
-        .menu-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            object-fit: contain;
-        }
-        
-        @media (max-width: 600px) {
-            body {
-                padding: 5px;
-            }
-            .menu-image {
-                border-radius: 4px;
-            }
-        }
-    </style>
+    <title>Tim & Lena - Hochzeit 27.06.2026</title>
+    <meta name="description" content="Hochzeitswebseite Tim & Lena - 27.06.2026">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <img 
-            src="getraenke.png" 
-            alt="Getränkekarte" 
-            class="menu-image"
-            loading="lazy"
-        >
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <h1>Tim & Lena</h1>
+        <p class="date">27.06.2026</p>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-navigation">
+        <button class="tab-button active" data-tab="getraenke">Getränkekarte</button>
+        <button class="tab-button" data-tab="ablauf">Ablauf</button>
+        <button class="tab-button" data-tab="spiele">Spiele</button>
+        <button class="tab-button" data-tab="musik">Musik</button>
+        <button class="tab-button" data-tab="fotos">Fotos</button>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="content-container">
+        
+        <!-- Getränkekarte Tab -->
+        <section id="getraenke" class="tab-content active">
+            <div class="drinks-container">
+                <img src="getraenke.png" alt="Getränkekarte" class="drinks-image">
+                <a href="getraenke.png" download="Getraenkekarte_Tim_Lena.png" class="download-button">Herunterladen</a>
+            </div>
+        </section>
+
+        <!-- Ablauf Tab -->
+        <section id="ablauf" class="tab-content">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">14:30</div>
+                    <div class="timeline-content">
+                        <h3>Ankunft der Gäste</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">15:00</div>
+                    <div class="timeline-content">
+                        <h3>Kaffee und Kuchen</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">16:00</div>
+                    <div class="timeline-content">
+                        <h3>Zeit für Spiele</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">18:00</div>
+                    <div class="timeline-content">
+                        <h3>Grillbuffet</h3>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">22:00</div>
+                    <div class="timeline-content">
+                        <h3>Popcorn</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spiele Tab -->
+        <section id="spiele" class="tab-content">
+            <h2>Spieleanleitungen</h2>
+            <div class="games-container">
+                
+                <div class="game-card">
+                    <button class="game-header">
+                        <h3>Spiel 1: Schuhspiel</h3>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="game-content">
+                        <h4>Spielregeln:</h4>
+                        <p>Das Brautpaar sitzt Rücken an Rücken und hält je einen Schuh der eigenen Person und einen vom Partner in der Hand. Der Spielleiter stellt Fragen wie "Wer ist ordentlicher?" oder "Wer hat das letzte Wort?". Die Antwort geben beide durch Hochhalten des entsprechenden Schuhs.</p>
+                        <h4>Benötigte Materialien:</h4>
+                        <ul>
+                            <li>2 Stühle</li>
+                            <li>Je 1 Schuh von Braut und Bräutigam</li>
+                            <li>Liste mit witzigen Fragen</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <button class="game-header">
+                        <h3>Spiel 2: Hochzeitsbingo</h3>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="game-content">
+                        <h4>Spielregeln:</h4>
+                        <p>Jeder Gast erhält eine Bingo-Karte mit typischen Hochzeitssituationen (z.B. "Braut wirft Brautstrauß", "Jemand weint", "DJ spielt Macarena"). Während der Feier kreuzen die Gäste an, was sie beobachten. Wer zuerst eine Reihe voll hat, ruft "Bingo!" und gewinnt.</p>
+                        <h4>Benötigte Materialien:</h4>
+                        <ul>
+                            <li>Bingo-Karten für alle Gäste</li>
+                            <li>Stifte</li>
+                            <li>Kleiner Preis für den Gewinner</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <button class="game-header">
+                        <h3>Spiel 3: Ehetauglichkeitstest</h3>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="game-content">
+                        <h4>Spielregeln:</h4>
+                        <p>Das Brautpaar wird getrennt und beiden werden die gleichen Fragen über ihre Beziehung gestellt (z.B. "Wo war euer erstes Date?", "Wer hat zuerst 'Ich liebe dich' gesagt?"). Die Antworten werden notiert und später verglichen. Für jede übereinstimmende Antwort gibt es einen Punkt.</p>
+                        <h4>Benötigte Materialien:</h4>
+                        <ul>
+                            <li>Fragenliste</li>
+                            <li>2 separate Räume oder Bereiche</li>
+                            <li>Papier und Stifte zum Notieren</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <button class="game-header">
+                        <h3>Spiel 4: Kuss-Spiel</h3>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="game-content">
+                        <h4>Spielregeln:</h4>
+                        <p>Immer wenn die Gäste mit Gläsern klirren, muss das Brautpaar sich küssen. Um das Spiel interessanter zu gestalten, können Gäste stattdessen auch ein Lied singen, einen Witz erzählen oder eine kleine Aufgabe erfüllen, um einen Kuss zu "erkaufen".</p>
+                        <h4>Benötigte Materialien:</h4>
+                        <ul>
+                            <li>Keine speziellen Materialien erforderlich</li>
+                            <li>Optional: Liste mit Aufgaben oder Liedern</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <button class="game-header">
+                        <h3>Spiel 5: Beziehungs-Quiz</h3>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="game-content">
+                        <h4>Spielregeln:</h4>
+                        <p>Die Gäste werden in Teams aufgeteilt und müssen Fragen über das Brautpaar beantworten (z.B. "Wie haben sie sich kennengelernt?", "Was ist ihr Lieblingsurlaubsort?"). Das Team mit den meisten richtigen Antworten gewinnt einen Preis.</p>
+                        <h4>Benötigte Materialien:</h4>
+                        <ul>
+                            <li>Fragenliste über das Brautpaar</li>
+                            <li>Antwortzettel für jedes Team</li>
+                            <li>Stifte</li>
+                            <li>Preis für das Gewinnerteam</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="game-card">
+                    <button class="game-header">
+                        <h3>Spiel 6: Foto-Challenge</h3>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="game-content">
+                        <h4>Spielregeln:</h4>
+                        <p>Jeder Tisch oder jede Gruppe erhält eine Liste mit kreativen Foto-Aufgaben (z.B. "Macht ein Gruppenfoto mit lustigen Gesichtern", "Fotografiert das älteste und jüngste Paar zusammen"). Die besten Fotos werden am Ende prämiert.</p>
+                        <h4>Benötigte Materialien:</h4>
+                        <ul>
+                            <li>Aufgabenlisten für jeden Tisch</li>
+                            <li>Smartphones der Gäste</li>
+                            <li>Beamer/Bildschirm zum Zeigen der Fotos (optional)</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Musik Tab -->
+        <section id="musik" class="tab-content">
+            <div class="music-container">
+                <p class="music-intro">Hilf uns, die perfekte Playlist für unsere Hochzeit zu erstellen! Füge deine Lieblingssongs hinzu und feiere mit uns zu deiner Musik.</p>
+                <div class="music-box">
+                    <h3>Unsere Hochzeits-Playlist</h3>
+                    <p>Klicke auf den Button, um zur Spotify-Playlist zu gelangen und deine Lieblingslieder hinzuzufügen.</p>
+                    <a href="#" class="spotify-button" target="_blank" rel="noopener noreferrer">Zur Spotify Playlist</a>
+                    <p class="music-note">Hinweis: Die Playlist ist kollaborativ - jeder kann Songs hinzufügen!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fotos Tab -->
+        <section id="fotos" class="tab-content">
+            <h2>Fotos</h2>
+            <div class="photos-container">
+                <p class="photos-intro">Teile deine schönsten Momente unserer Hochzeit mit uns! Lade deine Fotos in unser gemeinsames Album hoch.</p>
+                <div class="photos-box">
+                    <h3>Gemeinsames Fotoalbum</h3>
+                    <p>Klicke auf den Button, um zum Google Photos Album zu gelangen und deine Fotos hochzuladen.</p>
+                    <a href="#" class="photos-button" target="_blank" rel="noopener noreferrer">Zum Fotoalbum</a>
+                    <p class="photos-note">Tipp: Du kannst auch direkt vom Handy Fotos hochladen!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Tim & Lena</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
