@@ -493,6 +493,102 @@ body {
     margin-top: 1rem;
 }
 
+.music-instructions {
+    background-color: var(--hellgrau);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.music-instructions h4 {
+    color: var(--dunkel-rosa);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.music-instructions ol {
+    padding-left: 1.5rem;
+    color: var(--text-hell);
+    line-height: 1.8;
+}
+
+.music-instructions li {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+/* ===== Fotochallenge ===== */
+.photo-challenge {
+    margin-top: 3rem;
+    background-color: var(--weiss);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px var(--schatten);
+}
+
+.photo-challenge h3 {
+    font-size: 1.5rem;
+    color: var(--dunkel-rosa);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.challenge-intro {
+    text-align: center;
+    color: var(--text-hell);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+}
+
+.challenge-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--hellgrau);
+    padding: 1.25rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--altrosa);
+}
+
+.challenge-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--schatten);
+    border-left-color: var(--dunkel-rosa);
+}
+
+.challenge-number {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
+    color: var(--weiss);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.challenge-item p {
+    flex: 1;
+    color: var(--text-dunkel);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
 /* ===== Footer ===== */
 .footer {
     background-color: var(--weiss);
@@ -531,11 +627,25 @@ body {
         font-size: 1.1rem;
     }
 
+    .tab-navigation {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tab-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
     .tab-button {
-        padding: 0.75rem 0.7rem;
+        padding: 0.75rem 1rem;
         font-size: 0.85rem;
-        flex: 1 1 auto;
-        min-width: 0;
+        flex: 0 0 auto;
+        min-width: fit-content;
+        white-space: nowrap;
     }
 
     .content-container {
@@ -613,6 +723,58 @@ body {
         font-size: 1.3rem;
     }
 
+    .music-instructions {
+        padding: 1.25rem;
+        margin: 1.25rem 0;
+    }
+
+    .music-instructions h4 {
+        font-size: 1rem;
+    }
+
+    .music-instructions ol {
+        padding-left: 1.25rem;
+    }
+
+    .music-instructions li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+
+    /* Fotochallenge Tablet */
+    .photo-challenge {
+        margin-top: 2.5rem;
+        padding: 2rem;
+    }
+
+    .photo-challenge h3 {
+        font-size: 1.4rem;
+    }
+
+    .challenge-intro {
+        font-size: 0.95rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .challenge-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+    }
+
+    .challenge-item {
+        padding: 1rem;
+    }
+
+    .challenge-number {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+
+    .challenge-item p {
+        font-size: 0.9rem;
+    }
+
     /* Bessere Touch-Targets für Mobile */
     .tab-button,
     .game-header,
@@ -669,6 +831,8 @@ body {
         justify-content: flex-start;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE/Edge */
+        padding: 0;
+        gap: 0;
     }
 
     .tab-navigation::-webkit-scrollbar {
@@ -676,11 +840,12 @@ body {
     }
 
     .tab-button {
-        padding: 0.7rem 0.65rem;
+        padding: 0.75rem 0.85rem;
         font-size: 0.8rem;
         white-space: nowrap;
         flex: 0 0 auto;
         min-width: fit-content;
+        border-bottom-width: 2px;
     }
 
     .content-container {
@@ -809,6 +974,63 @@ body {
         font-size: 0.9rem;
     }
 
+    .music-instructions {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .music-instructions h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .music-instructions ol {
+        padding-left: 1.1rem;
+    }
+
+    .music-instructions li {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+    }
+
+    /* Fotochallenge Smartphone */
+    .photo-challenge {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+
+    .photo-challenge h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .challenge-intro {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .challenge-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+
+    .challenge-item {
+        padding: 0.9rem;
+        gap: 0.85rem;
+    }
+
+    .challenge-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .challenge-item p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
     .spotify-button,
     .photos-button {
         padding: 0.85rem 1.85rem;
@@ -823,5 +1045,52 @@ body {
     .footer {
         padding: 1.25rem;
         font-size: 0.85rem;
+    }
+}
+
+/* Extra kleine Smartphones */
+@media (max-width: 360px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header .heart {
+        font-size: 1.2rem;
+    }
+
+    .tab-button {
+        padding: 0.7rem 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .welcome-title {
+        font-size: 1.4rem;
+    }
+
+    .game-header h3 {
+        font-size: 0.9rem;
+    }
+
+    .photo-challenge {
+        padding: 1.25rem;
+    }
+
+    .photo-challenge h3 {
+        font-size: 1.15rem;
+    }
+
+    .challenge-item {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .challenge-number {
+        width: 1.85rem;
+        height: 1.85rem;
+        font-size: 0.85rem;
+    }
+
+    .challenge-item p {
+        font-size: 0.8rem;
     }
 }
