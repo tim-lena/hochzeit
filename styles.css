@@ -46,6 +46,23 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.header .heart {
+    color: var(--weiss);
+    font-size: 2rem;
+    display: inline-block;
+    animation: heartbeat 2s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
 .header .date {
     font-size: 1.2rem;
     font-weight: 300;
@@ -122,6 +139,43 @@ body {
     margin-bottom: 1.5rem;
     text-align: center;
     font-weight: 400;
+}
+
+/* ===== Home Tab ===== */
+.home-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    color: var(--dunkel-rosa);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.home-image-wrapper {
+    margin: 2rem 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px var(--schatten);
+}
+
+.home-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.welcome-text {
+    font-size: 1.3rem;
+    color: var(--text-hell);
+    line-height: 1.8;
+    margin-top: 2rem;
+    font-style: italic;
 }
 
 /* ===== Getränkekarte Tab ===== */
@@ -396,13 +450,27 @@ body {
         font-size: 2rem;
     }
 
+    .header .heart {
+        font-size: 1.6rem;
+    }
+
     .header .date {
         font-size: 1rem;
     }
 
+    .welcome-title {
+        font-size: 2rem;
+    }
+
+    .welcome-text {
+        font-size: 1.1rem;
+    }
+
     .tab-button {
-        padding: 0.75rem 1rem;
+        padding: 0.75rem 0.8rem;
         font-size: 0.9rem;
+        flex: 1;
+        min-width: 0;
     }
 
     .content-container {
@@ -435,21 +503,67 @@ body {
     .photos-box h3 {
         font-size: 1.3rem;
     }
+
+    /* Bessere Touch-Targets für Mobile */
+    .tab-button,
+    .game-header,
+    .download-button,
+    .spotify-button,
+    .photos-button {
+        min-height: 44px;
+    }
 }
 
 @media (max-width: 480px) {
+    .header {
+        padding: 1.5rem 0.75rem;
+    }
+
     .header h1 {
         font-size: 1.7rem;
         letter-spacing: 1px;
     }
 
+    .header .heart {
+        font-size: 1.4rem;
+    }
+
+    .welcome-title {
+        font-size: 1.6rem;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .home-image-wrapper {
+        margin: 1.5rem 0;
+        border-radius: 12px;
+    }
+
+    .tab-navigation {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+    }
+
     .tab-button {
-        padding: 0.6rem 0.7rem;
+        padding: 0.7rem 0.6rem;
         font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .content-container {
+        padding: 1rem 0.75rem;
     }
 
     .timeline-content h3 {
         font-size: 1.1rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
     }
 
     .game-header {
@@ -457,6 +571,27 @@ body {
     }
 
     .game-header h3 {
+        font-size: 1rem;
+    }
+
+    .game-content {
+        font-size: 0.95rem;
+    }
+
+    .drinks-container,
+    .music-box,
+    .photos-box {
+        padding: 1.25rem;
+    }
+
+    .music-intro,
+    .photos-intro {
+        font-size: 1rem;
+    }
+
+    .spotify-button,
+    .photos-button {
+        padding: 0.85rem 2rem;
         font-size: 1rem;
     }
 }

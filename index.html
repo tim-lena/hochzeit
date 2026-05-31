@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Tim & Lena - Hochzeit 27.06.2026</title>
     <meta name="description" content="Hochzeitswebseite Tim & Lena - 27.06.2026">
     <link rel="stylesheet" href="styles.css">
@@ -10,14 +10,15 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <h1>Tim & Lena</h1>
+        <h1>Tim <span class="heart">♡</span> Lena</h1>
         <p class="date">27.06.2026</p>
     </header>
 
     <!-- Tab Navigation -->
     <nav class="tab-navigation">
-        <button class="tab-button active" data-tab="getraenke">Getränkekarte</button>
+        <button class="tab-button active" data-tab="home">Home</button>
         <button class="tab-button" data-tab="ablauf">Ablauf</button>
+        <button class="tab-button" data-tab="getraenke">Getränkekarte</button>
         <button class="tab-button" data-tab="spiele">Spiele</button>
         <button class="tab-button" data-tab="musik">Musik</button>
         <button class="tab-button" data-tab="fotos">Fotos</button>
@@ -26,8 +27,19 @@
     <!-- Main Content Container -->
     <main class="content-container">
         
+        <!-- Home Tab -->
+        <section id="home" class="tab-content active">
+            <div class="home-container">
+                <h2 class="welcome-title">Willkommen zu unserer Hochzeit</h2>
+                <div class="home-image-wrapper">
+                    <img src="bild.jpg" alt="Tim & Lena" class="home-image">
+                </div>
+                <p class="welcome-text">Wir freuen uns, diesen besonderen Tag mit euch zu feiern!</p>
+            </div>
+        </section>
+
         <!-- Getränkekarte Tab -->
-        <section id="getraenke" class="tab-content active">
+        <section id="getraenke" class="tab-content">
             <div class="drinks-container">
                 <img src="getraenke.png" alt="Getränkekarte" class="drinks-image">
                 <a href="getraenke.png" download="Getraenkekarte_Tim_Lena.png" class="download-button">Herunterladen</a>
@@ -77,102 +89,97 @@
                 
                 <div class="game-card">
                     <button class="game-header">
-                        <h3>Spiel 1: Schuhspiel</h3>
+                        <h3>Ringwerfen</h3>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="game-content">
-                        <h4>Spielregeln:</h4>
-                        <p>Das Brautpaar sitzt Rücken an Rücken und hält je einen Schuh der eigenen Person und einen vom Partner in der Hand. Der Spielleiter stellt Fragen wie "Wer ist ordentlicher?" oder "Wer hat das letzte Wort?". Die Antwort geben beide durch Hochhalten des entsprechenden Schuhs.</p>
-                        <h4>Benötigte Materialien:</h4>
+                        <p>Ringwerfen ist ein ruhiges, leichtes Geschicklichkeitsspiel für Kinder und Erwachsene. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
+                        
+                        <h4>Ziel des Spiels</h4>
+                        <p>Mit den Wurfringen möglichst viele Punkte erzielen, indem man die Ringe über die Pins mit den höchsten Punktzahlen wirft.</p>
+                        
+                        <h4>So wird gespielt</h4>
                         <ul>
-                            <li>2 Stühle</li>
-                            <li>Je 1 Schuh von Braut und Bräutigam</li>
-                            <li>Liste mit witzigen Fragen</li>
+                            <li>Das Zielkreuz mit den 5 Pins wird auf den Boden gelegt.</li>
+                            <li>Die Pins sind mit verschiedenen Punktzahlen beschriftet.</li>
+                            <li>Eine Grundlinie wird in ca. 4 m Entfernung markiert (Abstand kann je nach Alter und Fähigkeit angepasst werden).</li>
+                            <li>Jeder Spieler oder jedes Team wirft nacheinander mit 1 bis 5 Ringen.</li>
+                            <li>Jeder Ring, der über einem Pin landet, bringt die entsprechende Punktzahl.</li>
+                        </ul>
+                        
+                        <h4>Wertung</h4>
+                        <ul>
+                            <li>Die Punkte aller geworfenen Ringe werden addiert.</li>
+                            <li>Wer die höchste Gesamtpunktzahl erreicht, gewinnt die Runde.</li>
+                        </ul>
+                        
+                        <h4>Varianten</h4>
+                        <ul>
+                            <li>Bis zu 5 Spieler können gleichzeitig mit je einem Ring antreten.</li>
+                            <li>Alternativ können beliebig viele Spieler mit 5 oder weniger Ringen spielen.</li>
+                            <li>Nach jedem Durchgang kann die Entfernung zur Grundlinie vergrößert werden, um den Schwierigkeitsgrad zu steigern.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="game-card">
                     <button class="game-header">
-                        <h3>Spiel 2: Hochzeitsbingo</h3>
+                        <h3>Riesenmikado</h3>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="game-content">
-                        <h4>Spielregeln:</h4>
-                        <p>Jeder Gast erhält eine Bingo-Karte mit typischen Hochzeitssituationen (z.B. "Braut wirft Brautstrauß", "Jemand weint", "DJ spielt Macarena"). Während der Feier kreuzen die Gäste an, was sie beobachten. Wer zuerst eine Reihe voll hat, ruft "Bingo!" und gewinnt.</p>
-                        <h4>Benötigte Materialien:</h4>
+                        <p>Riesenmikado ist die XXL-Variante des klassischen Mikado-Spiels. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
+                        
+                        <h4>Ziel des Spiels</h4>
+                        <p>Die Stäbe sollen nacheinander aufgehoben werden, ohne dass sich ein anderer Stab bewegt. Je schwieriger der Stab, desto mehr Punkte gibt es.</p>
+                        
+                        <h4>So wird gespielt</h4>
                         <ul>
-                            <li>Bingo-Karten für alle Gäste</li>
-                            <li>Stifte</li>
-                            <li>Kleiner Preis für den Gewinner</li>
+                            <li>Die Stäbe werden zu einem Bündel zusammengehalten und fallen gelassen, sodass sie sich kreuz und quer verteilen.</li>
+                            <li>Gespielt wird reihum: Wer an der Reihe ist, versucht einen Stab aufzunehmen, ohne die anderen zu bewegen.</li>
+                            <li>Gelingt es, darf der Spieler weitermachen. Bewegt sich ein anderer Stab, ist der nächste Spieler dran.</li>
+                            <li>In Teams wird gemeinsam gesammelt - die Punkte werden am Ende addiert.</li>
+                        </ul>
+                        
+                        <h4>Punktewertung</h4>
+                        <ul>
+                            <li>Jeder Stab hat eine bestimmte Anzahl an Farbstrichen.</li>
+                            <li>Beim Einsammeln werden die Striche gezählt.</li>
+                            <li>Am Ende gewinnt das Team oder der Spieler mit den meisten gesammelten Strichen.</li>
+                        </ul>
+                        
+                        <h4>Spielende</h4>
+                        <ul>
+                            <li>Wenn alle Stäbe eingesammelt wurden, werden die Punkte gezählt.</li>
+                            <li>Das Team oder der Spieler mit der höchsten Punktzahl gewinnt.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="game-card">
                     <button class="game-header">
-                        <h3>Spiel 3: Ehetauglichkeitstest</h3>
+                        <h3>Shuffleboard</h3>
                         <span class="accordion-icon">+</span>
                     </button>
                     <div class="game-content">
-                        <h4>Spielregeln:</h4>
-                        <p>Das Brautpaar wird getrennt und beiden werden die gleichen Fragen über ihre Beziehung gestellt (z.B. "Wo war euer erstes Date?", "Wer hat zuerst 'Ich liebe dich' gesagt?"). Die Antworten werden notiert und später verglichen. Für jede übereinstimmende Antwort gibt es einen Punkt.</p>
-                        <h4>Benötigte Materialien:</h4>
+                        <p>Shuffleboard ist ein Geschicklichkeitsspiel, bei dem Pucks über eine Bahn geschoben werden müssen. Es kann einzeln oder in Teams gespielt werden.</p>
+                        
+                        <h4>Ziel des Spiels</h4>
+                        <p>Die Pucks möglichst nah an das Ziel schieben oder in die höchsten Punktezonen platzieren.</p>
+                        
+                        <h4>So wird gespielt</h4>
                         <ul>
-                            <li>Fragenliste</li>
-                            <li>2 separate Räume oder Bereiche</li>
-                            <li>Papier und Stifte zum Notieren</li>
+                            <li>Die Spielbahn wird auf einer ebenen Fläche aufgebaut.</li>
+                            <li>Jeder Spieler oder jedes Team erhält Pucks.</li>
+                            <li>Abwechselnd werden die Pucks über die Bahn geschoben.</li>
+                            <li>Ziel ist es, die Pucks in den markierten Zonen zu platzieren.</li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Spiel 4: Kuss-Spiel</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <h4>Spielregeln:</h4>
-                        <p>Immer wenn die Gäste mit Gläsern klirren, muss das Brautpaar sich küssen. Um das Spiel interessanter zu gestalten, können Gäste stattdessen auch ein Lied singen, einen Witz erzählen oder eine kleine Aufgabe erfüllen, um einen Kuss zu "erkaufen".</p>
-                        <h4>Benötigte Materialien:</h4>
+                        
+                        <h4>Wertung</h4>
                         <ul>
-                            <li>Keine speziellen Materialien erforderlich</li>
-                            <li>Optional: Liste mit Aufgaben oder Liedern</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Spiel 5: Beziehungs-Quiz</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <h4>Spielregeln:</h4>
-                        <p>Die Gäste werden in Teams aufgeteilt und müssen Fragen über das Brautpaar beantworten (z.B. "Wie haben sie sich kennengelernt?", "Was ist ihr Lieblingsurlaubsort?"). Das Team mit den meisten richtigen Antworten gewinnt einen Preis.</p>
-                        <h4>Benötigte Materialien:</h4>
-                        <ul>
-                            <li>Fragenliste über das Brautpaar</li>
-                            <li>Antwortzettel für jedes Team</li>
-                            <li>Stifte</li>
-                            <li>Preis für das Gewinnerteam</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Spiel 6: Foto-Challenge</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <h4>Spielregeln:</h4>
-                        <p>Jeder Tisch oder jede Gruppe erhält eine Liste mit kreativen Foto-Aufgaben (z.B. "Macht ein Gruppenfoto mit lustigen Gesichtern", "Fotografiert das älteste und jüngste Paar zusammen"). Die besten Fotos werden am Ende prämiert.</p>
-                        <h4>Benötigte Materialien:</h4>
-                        <ul>
-                            <li>Aufgabenlisten für jeden Tisch</li>
-                            <li>Smartphones der Gäste</li>
-                            <li>Beamer/Bildschirm zum Zeigen der Fotos (optional)</li>
+                            <li>Je nach Zone, in der der Puck landet, gibt es unterschiedliche Punkte.</li>
+                            <li>Pucks, die von der Bahn fallen, zählen nicht.</li>
+                            <li>Das Team oder der Spieler mit der höchsten Punktzahl gewinnt.</li>
                         </ul>
                     </div>
                 </div>
