@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Update URL hash without scrolling
             history.pushState(null, null, `#${tabName}`);
+            
+            // Smooth scroll to top of content
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
     
@@ -65,6 +68,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.classList.remove('active');
             } else {
                 card.classList.add('active');
+            }
+        });
+    });
+    
+    
+    // Back to Top Button functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+    
+    // Scroll to top when button is clicked
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    
+    // Smooth scroll for internal links (e.g., Spiele link in Ablauf)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Check if it's a tab link
+            const tabName = href.substring(1);
+            const tabButton = document.querySelector(`[data-tab="${tabName}"]`);
+            
+            if (tabButton) {
+                e.preventDefault();
+                switchTab(tabName);
             }
         });
     });

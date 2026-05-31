@@ -589,6 +589,28 @@ body {
     margin: 0;
 }
 
+/* Fotoalbum Hinweis */
+.photo-album-notice {
+    margin-top: 2.5rem;
+    background-color: #FFF9F0;
+    border: 2px solid var(--altrosa);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.photo-album-notice p {
+    color: var(--text-dunkel);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.photo-album-notice strong {
+    color: var(--dunkel-rosa);
+    font-weight: 600;
+}
+
 /* ===== Footer ===== */
 .footer {
     background-color: var(--weiss);
@@ -598,6 +620,46 @@ body {
     font-size: 0.9rem;
     border-top: 1px solid #E0E0E0;
     margin-top: 3rem;
+}
+
+/* ===== Back to Top Button ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
+    color: var(--weiss);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--schatten);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--schatten);
+}
+
+.back-to-top:active {
+    transform: translateY(-1px);
+}
+
+.back-to-top span {
+    display: block;
+    line-height: 1;
 }
 
 /* ===== Responsive Design ===== */
@@ -772,6 +834,16 @@ body {
     }
 
     .challenge-item p {
+        font-size: 0.9rem;
+    }
+
+    /* Fotoalbum Hinweis Tablet */
+    .photo-album-notice {
+        margin-top: 2rem;
+        padding: 1.25rem;
+    }
+
+    .photo-album-notice p {
         font-size: 0.9rem;
     }
 
@@ -1031,6 +1103,17 @@ body {
         line-height: 1.4;
     }
 
+    /* Fotoalbum Hinweis Smartphone */
+    .photo-album-notice {
+        margin-top: 1.75rem;
+        padding: 1rem;
+    }
+
+    .photo-album-notice p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
     .spotify-button,
     .photos-button {
         padding: 0.85rem 1.85rem;
@@ -1045,6 +1128,15 @@ body {
     .footer {
         padding: 1.25rem;
         font-size: 0.85rem;
+    }
+
+    /* Back to Top Button Mobile */
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -1092,5 +1184,22 @@ body {
 
     .challenge-item p {
         font-size: 0.8rem;
+    }
+
+    .photo-album-notice {
+        margin-top: 1.5rem;
+        padding: 0.85rem;
+    }
+
+    .photo-album-notice p {
+        font-size: 0.8rem;
+    }
+
+    .back-to-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
     }
 }
