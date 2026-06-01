@@ -288,15 +288,16 @@ body {
 }
 
 .timeline-content h3 {
-    font-size: 1.3rem;
-    color: var(--text-dunkel);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--dunkel-rosa);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
 }
 
 .timeline-content p {
     color: var(--text-hell);
-    font-size: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 /* Timeline Divider für Freizeit */
@@ -322,14 +323,20 @@ body {
 
 .freizeit-text {
     background: linear-gradient(135deg, #FFF5F8 0%, var(--hellgrau) 100%);
-    color: var(--dunkel-rosa);
-    padding: 1.5rem 2rem;
+    color: var(--text-dunkel);
+    padding: 1.75rem 2rem;
     border-radius: 12px;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.05rem;
     border-left: 5px solid var(--altrosa);
-    box-shadow: 0 4px 12px var(--schatten);
-    line-height: 1.7;
+    box-shadow: 0 4px 15px var(--schatten);
+    line-height: 1.8;
+}
+
+.freizeit-text strong {
+    color: var(--dunkel-rosa);
+    font-weight: 600;
+    font-style: normal;
 }
 
 .spiele-link {

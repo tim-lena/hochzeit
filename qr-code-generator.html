@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-Code Generator - Hochzeitswebseite</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #B5838D 0%, #E5989B 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 600px;
+        }
+        h1 {
+            color: #B5838D;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        .url {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            word-break: break-all;
+            color: #666;
+        }
+        #qrcode {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            display: inline-block;
+            border: 2px solid #E5989B;
+            border-radius: 12px;
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #B5838D 0%, #E5989B 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(181, 131, 141, 0.3);
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(181, 131, 141, 0.4);
+        }
+        .info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #FFF9F0;
+            border-radius: 8px;
+            color: #666;
+            line-height: 1.8;
+            text-align: left;
+        }
+        .info strong {
+            color: #B5838D;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>QR-Code für eure Hochzeitswebseite</h1>
+        <p>Tim ♡ Lena - 27.06.2026</p>
+        
+        <div class="url">
+            https://tim-lena.github.io/hochzeit/
+        </div>
+
+        <div id="qrcode">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://tim-lena.github.io/hochzeit/&color=B5838D&bgcolor=FFFFFF" alt="QR-Code" style="width: 400px; height: 400px;">
+        </div>
+
+        <div>
+            <button onclick="downloadQR(1000)" class="download-btn">
+                📥 Herunterladen (1000x1000px)
+            </button>
+            <button onclick="downloadQR(2000)" class="download-btn">
+                📥 Herunterladen (2000x2000px - Druck)
+            </button>
+        </div>
+
+        <div class="info">
+            <strong>💡 Tipps für den Druck:</strong><br>
+            • Verwende die 2000x2000px Version für hohe Druckqualität<br>
+            • Empfohlene Druckgröße: 10x10 cm oder größer<br>
+            • Der QR-Code ist bereits in euren Hochzeitsfarben (Rosa)<br>
+            • Teste den QR-Code vor dem Massendruck mit deinem Handy<br>
+            • Die URL bleibt gleich, auch wenn du die Webseite änderst
+        </div>
+    </div>
+
+    <script>
+        function downloadQR(size) {
+            const url = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=https://tim-lena.github.io/hochzeit/&color=B5838D&bgcolor=FFFFFF`;
+            const filename = `hochzeit-qr-code-${size}px.png`;
+            
+            // Bild herunterladen und als Blob speichern
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    // Temporären Download-Link erstellen
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    // URL freigeben nach dem Download
+                    setTimeout(() => URL.revokeObjectURL(link.href), 100);
+                })
+                .catch(error => {
+                    console.error('Download fehlgeschlagen:', error);
+                    alert('Download fehlgeschlagen. Bitte versuche es erneut.');
+                });
+        }
+    </script>
+</body>
+</html>
