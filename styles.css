@@ -458,7 +458,8 @@ body {
 }
 
 .music-intro,
-.photos-intro {
+.photos-intro,
+.games-intro {
     text-align: center;
     font-size: 1.1rem;
     color: var(--text-hell);
@@ -1121,7 +1122,8 @@ body {
     }
 
     .music-intro,
-    .photos-intro {
+    .photos-intro,
+    .games-intro {
         font-size: 0.95rem;
         margin-bottom: 1.5rem;
     }
