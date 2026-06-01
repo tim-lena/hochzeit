@@ -452,7 +452,8 @@ body {
 
 /* ===== Musik Tab ===== */
 .music-container,
-.photos-container {
+.photos-container,
+.games-container-wrapper {
     max-width: 700px;
     margin: 0 auto;
 }
