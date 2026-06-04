@@ -14,6 +14,13 @@
     --text-dunkel: #333333;
     --text-hell: #666666;
     --schatten: rgba(0, 0, 0, 0.1);
+    --fs-body: 1rem;
+    --fs-heading: 1.5rem;
+    --fs-body-tablet: 0.95rem;
+    --fs-heading-tablet: 1.3rem;
+    --fs-body-mobile: 0.9rem;
+    --fs-heading-mobile: 1.2rem;
+    --fs-heading-mobile-small: 1.1rem;
 }
 
 html {
@@ -646,6 +653,10 @@ li {
     line-height: 1.6;
 }
 
+.photos-container .photos-box .photos-intro {
+    font-size: inherit;
+}
+
 .spotify-button,
 .photos-button {
     display: inline-block;
@@ -793,6 +804,35 @@ li {
 .photo-album-notice strong {
     color: var(--dunkel-rosa);
     font-weight: 600;
+}
+
+/* ===== Typography Alignment ===== */
+.timeline-content p,
+.welcome-text,
+.freizeit-text,
+.freizeit-intro,
+.guestbook-box p,
+.game-content p,
+.game-content li,
+.music-intro,
+.photos-intro,
+.games-intro,
+.music-box p,
+.photos-box p,
+.music-instructions li,
+.challenge-intro,
+.challenge-item p,
+.photo-album-notice p {
+    font-size: var(--fs-body);
+}
+
+.timeline-content h3,
+.guestbook-box h3,
+.game-header h3,
+.music-box h3,
+.photos-box h3,
+.photo-challenge h3 {
+    font-size: var(--fs-heading);
 }
 
 /* ===== Footer ===== */
@@ -1114,6 +1154,34 @@ li {
     .home-image-wrapper {
         margin: 1.75rem 0;
     }
+
+    .timeline-content p,
+    .welcome-text,
+    .freizeit-text,
+    .freizeit-intro,
+    .guestbook-box p,
+    .game-content p,
+    .game-content li,
+    .music-intro,
+    .photos-intro,
+    .games-intro,
+    .music-box p,
+    .photos-box p,
+    .music-instructions li,
+    .challenge-intro,
+    .challenge-item p,
+    .photo-album-notice p {
+        font-size: var(--fs-body-tablet);
+    }
+
+    .timeline-content h3,
+    .guestbook-box h3,
+    .game-header h3,
+    .music-box h3,
+    .photos-box h3,
+    .photo-challenge h3 {
+        font-size: var(--fs-heading-tablet);
+    }
 }
 
 @media (max-width: 640px) {
@@ -1285,14 +1353,27 @@ li {
     }
 
     .freizeit-subnav {
-        gap: 0.5rem;
+        gap: 0.4rem;
         margin-bottom: 1.25rem;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .freizeit-subnav::-webkit-scrollbar {
+        display: none;
     }
 
     .freizeit-subtab-button {
-        width: 100%;
-        padding: 0.8rem 1rem;
-        font-size: 0.92rem;
+        width: auto;
+        flex: 1 1 auto;
+        min-width: max-content;
+        white-space: nowrap;
+        padding: 0.65rem 0.8rem;
+        font-size: 0.88rem;
         min-height: 46px;
     }
 
@@ -1481,6 +1562,34 @@ li {
         height: 2.75rem;
         font-size: 1.3rem;
     }
+
+    .timeline-content p,
+    .welcome-text,
+    .freizeit-text,
+    .freizeit-intro,
+    .guestbook-box p,
+    .game-content p,
+    .game-content li,
+    .music-intro,
+    .photos-intro,
+    .games-intro,
+    .music-box p,
+    .photos-box p,
+    .music-instructions li,
+    .challenge-intro,
+    .challenge-item p,
+    .photo-album-notice p {
+        font-size: var(--fs-body-mobile);
+    }
+
+    .timeline-content h3,
+    .guestbook-box h3,
+    .game-header h3,
+    .music-box h3,
+    .photos-box h3,
+    .photo-challenge h3 {
+        font-size: var(--fs-heading-mobile);
+    }
 }
 
 /* Extra kleine Smartphones */
@@ -1568,5 +1677,14 @@ li {
 
     .guestbook-box {
         padding: 1.25rem;
+    }
+
+    .timeline-content h3,
+    .guestbook-box h3,
+    .game-header h3,
+    .music-box h3,
+    .photos-box h3,
+    .photo-challenge h3 {
+        font-size: var(--fs-heading-mobile-small);
     }
 }
