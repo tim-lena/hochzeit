@@ -187,6 +187,57 @@ body {
     font-style: italic;
 }
 
+.love-timeline-section {
+    margin-top: 3.5rem;
+    text-align: left;
+}
+
+.love-timeline-title {
+    font-size: 1.9rem;
+    color: var(--dunkel-rosa);
+    text-align: center;
+    margin-bottom: 1.75rem;
+    font-weight: 400;
+}
+
+.love-timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+}
+
+.love-year-card {
+    background-color: var(--weiss);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px var(--schatten);
+    overflow: hidden;
+    border: 1px solid #f0e4e7;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.love-year-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.love-year {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--weiss);
+    background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
+    padding: 0.55rem 0.9rem;
+    margin: 0;
+    text-align: center;
+}
+
+.love-year-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    display: block;
+    object-fit: cover;
+}
+
 /* ===== Getränkekarte Tab ===== */
 .drinks-container {
     background-color: var(--weiss);
@@ -718,6 +769,20 @@ body {
         font-size: 1.1rem;
     }
 
+    .love-timeline-section {
+        margin-top: 2.75rem;
+    }
+
+    .love-timeline-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.4rem;
+    }
+
+    .love-timeline-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
     .tab-navigation {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -922,6 +987,12 @@ body {
     }
 }
 
+@media (max-width: 640px) {
+    .love-timeline-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
     .header {
         padding: 1.5rem 0.75rem;
@@ -950,6 +1021,25 @@ body {
         font-size: 1rem;
         margin-top: 1.5rem;
         padding: 0 0.5rem;
+    }
+
+    .love-timeline-section {
+        margin-top: 2.25rem;
+    }
+
+    .love-timeline-title {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+
+    .love-timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+    }
+
+    .love-year {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.8rem;
     }
 
     .home-image-wrapper {
