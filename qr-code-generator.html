@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>QR-Code Generator - Hochzeitswebseite</title>
     <style>
         body {
@@ -13,7 +13,8 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+            box-sizing: border-box;
         }
         .container {
             background: white;
@@ -22,6 +23,8 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             text-align: center;
             max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
         }
         h1 {
             color: #B5838D;
@@ -43,6 +46,13 @@
             display: inline-block;
             border: 2px solid #E5989B;
             border-radius: 12px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .qr-image {
+            width: min(400px, 100%);
+            height: auto;
+            display: block;
         }
         .download-btn {
             background: linear-gradient(135deg, #B5838D 0%, #E5989B 100%);
@@ -55,6 +65,8 @@
             box-shadow: 0 4px 12px rgba(181, 131, 141, 0.3);
             transition: all 0.3s;
             margin: 0.5rem;
+            min-height: 44px;
+            touch-action: manipulation;
         }
         .download-btn:hover {
             transform: translateY(-2px);
@@ -72,6 +84,35 @@
         .info strong {
             color: #B5838D;
         }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+
+            h1 {
+                font-size: 1.35rem;
+            }
+
+            #qrcode {
+                margin: 1.25rem 0;
+                padding: 0.75rem;
+            }
+
+            .download-btn {
+                width: 100%;
+                margin: 0.4rem 0;
+                padding: 0.9rem 1rem;
+                font-size: 1rem;
+            }
+
+            .info {
+                margin-top: 1.25rem;
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -84,7 +125,7 @@
         </div>
 
         <div id="qrcode">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://tim-lena.github.io/hochzeit/&color=B5838D&bgcolor=FFFFFF" alt="QR-Code" style="width: 400px; height: 400px;">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://tim-lena.github.io/hochzeit/&color=B5838D&bgcolor=FFFFFF" alt="QR-Code" class="qr-image">
         </div>
 
         <div>

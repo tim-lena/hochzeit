@@ -30,6 +30,22 @@ body {
     flex-direction: column;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+li {
+    overflow-wrap: break-word;
 }
 
 /* ===== Header ===== */
@@ -82,6 +98,8 @@ body {
     top: 0;
     z-index: 100;
     gap: 0;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
 .tab-button {
@@ -95,6 +113,7 @@ body {
     border-bottom: 3px solid transparent;
     font-weight: 500;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .tab-button:hover {
@@ -120,6 +139,8 @@ body {
     width: 100%;
     margin: 0 auto;
     padding: 2rem 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
 }
 
 .tab-content {
@@ -437,6 +458,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px var(--schatten);
+    touch-action: manipulation;
 }
 
 .freizeit-subtab-button:hover {
@@ -508,6 +530,7 @@ body {
     align-items: center;
     transition: background-color 0.3s ease;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .game-header:hover {
@@ -634,6 +657,7 @@ body {
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px var(--schatten);
     margin: 1rem 0;
+    touch-action: manipulation;
 }
 
 .spotify-button:hover,
@@ -778,13 +802,16 @@ body {
     font-size: 0.9rem;
     border-top: 1px solid #E0E0E0;
     margin-top: 3rem;
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
 }
 
 /* ===== Back to Top Button ===== */
 .back-to-top {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: max(2rem, env(safe-area-inset-bottom));
+    right: max(2rem, env(safe-area-inset-right));
     width: 3rem;
     height: 3rem;
     background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
@@ -868,6 +895,7 @@ body {
         flex-wrap: nowrap;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        scroll-snap-type: x proximity;
     }
 
     .tab-navigation::-webkit-scrollbar {
@@ -880,6 +908,7 @@ body {
         flex: 0 0 auto;
         min-width: fit-content;
         white-space: nowrap;
+        scroll-snap-align: center;
     }
 
     .content-container {
@@ -957,6 +986,7 @@ body {
     .freizeit-subtab-button {
         padding: 0.7rem 1.15rem;
         font-size: 0.95rem;
+        min-height: 44px;
     }
 
     .guestbook-box {
@@ -1169,6 +1199,8 @@ body {
 
     .content-container {
         padding: 1rem 0.75rem;
+        padding-left: max(0.75rem, env(safe-area-inset-left));
+        padding-right: max(0.75rem, env(safe-area-inset-right));
     }
 
     .tab-content h2 {
@@ -1259,6 +1291,7 @@ body {
         width: 100%;
         padding: 0.8rem 1rem;
         font-size: 0.92rem;
+        min-height: 46px;
     }
 
     .guestbook-box {
@@ -1440,8 +1473,8 @@ body {
 
     /* Back to Top Button Mobile */
     .back-to-top {
-        bottom: 1.5rem;
-        right: 1.5rem;
+        bottom: max(1.5rem, env(safe-area-inset-bottom));
+        right: max(1.5rem, env(safe-area-inset-right));
         width: 2.75rem;
         height: 2.75rem;
         font-size: 1.3rem;
@@ -1504,8 +1537,8 @@ body {
     }
 
     .back-to-top {
-        bottom: 1.25rem;
-        right: 1.25rem;
+        bottom: max(1.25rem, env(safe-area-inset-bottom));
+        right: max(1.25rem, env(safe-area-inset-right));
         width: 2.5rem;
         height: 2.5rem;
         font-size: 1.2rem;

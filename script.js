@@ -5,6 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const freizeitSubtabButtons = document.querySelectorAll('.freizeit-subtab-button');
     const freizeitSubtabContents = document.querySelectorAll('.freizeit-subtab-content');
 
+    function scrollButtonIntoView(button) {
+        if (!button) {
+            return;
+        }
+
+        button.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest'
+        });
+    }
+
     function switchFreizeitSubtab(subtabName, options = {}) {
         const updateHistory = options.updateHistory ?? true;
 
@@ -12,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const isActive = button.getAttribute('data-freizeit-tab') === subtabName;
             button.classList.toggle('active', isActive);
             button.setAttribute('aria-selected', String(isActive));
+
+            if (isActive) {
+                scrollButtonIntoView(button);
+            }
         });
 
         freizeitSubtabContents.forEach(content => {
@@ -36,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (activeButton && activeContent) {
             activeButton.classList.add('active');
             activeContent.classList.add('active');
+            scrollButtonIntoView(activeButton);
 
             if (tabName === 'freizeit') {
                 switchFreizeitSubtab(subtab || 'spiele', { updateHistory });
