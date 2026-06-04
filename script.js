@@ -1,69 +1,94 @@
 // Tab Navigation
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Get all tab buttons and tab contents
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
-    
-    // Tab switching function
-    function switchTab(tabName) {
-        // Remove active class from all buttons and contents
+    const freizeitSubtabButtons = document.querySelectorAll('.freizeit-subtab-button');
+    const freizeitSubtabContents = document.querySelectorAll('.freizeit-subtab-content');
+
+    function switchFreizeitSubtab(subtabName, options = {}) {
+        const updateHistory = options.updateHistory ?? true;
+
+        freizeitSubtabButtons.forEach(button => {
+            const isActive = button.getAttribute('data-freizeit-tab') === subtabName;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-selected', String(isActive));
+        });
+
+        freizeitSubtabContents.forEach(content => {
+            content.classList.toggle('active', content.id === `freizeit-${subtabName}`);
+        });
+
+        if (updateHistory) {
+            history.pushState(null, null, `#freizeit-${subtabName}`);
+        }
+    }
+
+    function switchTab(tabName, options = {}) {
+        const updateHistory = options.updateHistory ?? true;
+        const subtab = options.subtab;
+
         tabButtons.forEach(button => button.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-        
-        // Add active class to clicked button and corresponding content
+
         const activeButton = document.querySelector(`[data-tab="${tabName}"]`);
         const activeContent = document.getElementById(tabName);
-        
+
         if (activeButton && activeContent) {
             activeButton.classList.add('active');
             activeContent.classList.add('active');
-            
-            // Update URL hash without scrolling
-            history.pushState(null, null, `#${tabName}`);
-            
-            // Smooth scroll to top of content
+
+            if (tabName === 'freizeit') {
+                switchFreizeitSubtab(subtab || 'spiele', { updateHistory });
+            } else if (updateHistory) {
+                history.pushState(null, null, `#${tabName}`);
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
-    
-    // Add click event listeners to all tab buttons
+
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
             const tabName = this.getAttribute('data-tab');
             switchTab(tabName);
         });
     });
-    
-    // Handle deep linking (URL hash)
+
+    freizeitSubtabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            switchTab('freizeit', {
+                subtab: this.getAttribute('data-freizeit-tab')
+            });
+        });
+    });
+
     function handleHashChange() {
         const hash = window.location.hash.substring(1);
         if (hash) {
-            switchTab(hash);
+            if (hash.startsWith('freizeit-')) {
+                switchTab('freizeit', {
+                    subtab: hash.replace('freizeit-', ''),
+                    updateHistory: false
+                });
+                return;
+            }
+
+            switchTab(hash, { updateHistory: false });
         }
     }
-    
-    // Check for hash on page load
+
     handleHashChange();
-    
-    // Listen for hash changes
+
     window.addEventListener('hashchange', handleHashChange);
-    
-    
-    // Accordion functionality for game cards
+
     const gameCards = document.querySelectorAll('.game-card');
-    
+
     gameCards.forEach(card => {
         const header = card.querySelector('.game-header');
-        
+
         header.addEventListener('click', function() {
-            // Toggle active class on clicked card
             const isActive = card.classList.contains('active');
-            
-            // Optional: Close other cards (comment out if you want multiple cards open)
-            // gameCards.forEach(c => c.classList.remove('active'));
-            
-            // Toggle current card
+
             if (isActive) {
                 card.classList.remove('active');
             } else {
@@ -71,12 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    
-    // Back to Top Button functionality
+
     const backToTopButton = document.getElementById('backToTop');
-    
-    // Show/hide button based on scroll position
+
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             backToTopButton.classList.add('visible');
@@ -84,30 +106,25 @@ document.addEventListener('DOMContentLoaded', function() {
             backToTopButton.classList.remove('visible');
         }
     });
-    
-    // Scroll to top when button is clicked
+
     backToTopButton.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-    
-    
-    // Smooth scroll for internal links (e.g., Spiele link in Ablauf)
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            
-            // Check if it's a tab link
-            const tabName = href.substring(1);
+            const tabName = this.getAttribute('data-tab-target') || href.substring(1);
+            const subtabName = this.getAttribute('data-subtab-target') || this.getAttribute('data-freizeit-subtab');
             const tabButton = document.querySelector(`[data-tab="${tabName}"]`);
-            
+
             if (tabButton) {
                 e.preventDefault();
-                switchTab(tabName);
+                switchTab(tabName, { subtab: subtabName });
             }
         });
     });
-    
 });

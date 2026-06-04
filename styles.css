@@ -404,6 +404,80 @@ body {
     border-bottom-color: var(--rosa);
 }
 
+/* ===== Freizeit Tab ===== */
+.freizeit-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.freizeit-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-hell);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.freizeit-subnav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.freizeit-subtab-button {
+    border: 1px solid rgba(181, 131, 141, 0.25);
+    background-color: var(--weiss);
+    color: var(--dunkel-rosa);
+    border-radius: 999px;
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--schatten);
+}
+
+.freizeit-subtab-button:hover {
+    background-color: #fff5f7;
+}
+
+.freizeit-subtab-button.active {
+    background: linear-gradient(135deg, var(--dunkel-rosa) 0%, var(--altrosa) 100%);
+    color: var(--weiss);
+    border-color: transparent;
+}
+
+.freizeit-subtab-content {
+    display: none;
+}
+
+.freizeit-subtab-content.active {
+    display: block;
+}
+
+.guestbook-box {
+    background-color: var(--weiss);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px var(--schatten);
+    text-align: center;
+}
+
+.guestbook-box h3 {
+    font-size: 1.5rem;
+    color: var(--dunkel-rosa);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.guestbook-box p {
+    color: var(--text-hell);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
 /* ===== Spiele Tab ===== */
 .games-container {
     display: flex;
@@ -526,6 +600,10 @@ body {
     padding: 2.5rem;
     box-shadow: 0 4px 15px var(--schatten);
     text-align: center;
+}
+
+.photos-container .photos-box {
+    margin-bottom: 1.5rem;
 }
 
 .music-box h3,
@@ -866,6 +944,25 @@ body {
         border-left-width: 4px;
     }
 
+    .freizeit-intro {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .freizeit-subnav {
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .freizeit-subtab-button {
+        padding: 0.7rem 1.15rem;
+        font-size: 0.95rem;
+    }
+
+    .guestbook-box {
+        padding: 2rem;
+    }
+
     .drinks-container,
     .music-box,
     .photos-box {
@@ -1148,6 +1245,34 @@ body {
         border-radius: 10px;
     }
 
+    .freizeit-intro {
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .freizeit-subnav {
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .freizeit-subtab-button {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 0.92rem;
+    }
+
+    .guestbook-box {
+        padding: 1.5rem;
+    }
+
+    .guestbook-box h3 {
+        font-size: 1.25rem;
+    }
+
+    .guestbook-box p {
+        font-size: 0.9rem;
+    }
+
     .drinks-container {
         padding: 1rem;
     }
@@ -1404,5 +1529,9 @@ body {
     .freizeit-text {
         padding: 0.9rem 1rem;
         font-size: 0.82rem;
+    }
+
+    .guestbook-box {
+        padding: 1.25rem;
     }
 }

@@ -20,9 +20,8 @@
         <button class="tab-button active" data-tab="home">Home</button>
         <button class="tab-button" data-tab="ablauf">Ablauf</button>
         <button class="tab-button" data-tab="getraenke">Getränkekarte</button>
-        <button class="tab-button" data-tab="spiele">Spiele</button>
+        <button class="tab-button" data-tab="freizeit">Freizeit</button>
         <button class="tab-button" data-tab="musik">Musik</button>
-        <!-- <button class="tab-button" data-tab="fotos">Fotos</button> -->
     </nav>
 
     <!-- Main Content Container -->
@@ -33,7 +32,7 @@
             <div class="home-container">
                 <h2 class="welcome-title">Willkommen zu unserer Hochzeit</h2>
                 <div class="home-image-wrapper">
-                    <img src="fotos/IMG_6802.JPEG" alt="Tim & Lena" class="home-image">
+                    <img src="bild.jpg" alt="Tim & Lena" class="home-image">
                 </div>
                 <p class="welcome-text">Wir freuen uns, diesen besonderen Tag mit euch zu feiern!</p>
 
@@ -135,7 +134,10 @@
                 
                 <!-- Freizeit Hinweis -->
                 <div class="timeline-divider">
-                    <p class="freizeit-text"><strong>Im Anschluss:</strong> Zeit für gemütliches Beisammensein. Im Garten stehen einige <a href="#spiele" class="spiele-link">Spiele</a> bereit und unser Gästebuch freut sich über eure Einträge. Mit unserer Fotobox könnt ihr Bilder direkt ausdrucken und diese in das Gästebuch einkleben.</p>
+                    <div class="freizeit-text">
+                        <strong>Im Anschluss:</strong> Zeit für gemütliches Beisammensein. Lust auf etwas Abwechslung zwischendurch? Unter <a href="#freizeit" class="spiele-link" data-tab-target="freizeit">Freizeit</a> findet ihr viele tolle Ideen und Aktivitäten.<br><br>
+                        
+                    </div>
                 </div>
                 
                 <div class="timeline-item">
@@ -153,198 +155,259 @@
             </div>
         </section>
 
-        <!-- Spiele Tab -->
-        <section id="spiele" class="tab-content">
-            <div class="games-container-wrapper">
-                <p class="games-intro">Wir haben eine Auswahl an Spielen für euch vorbereitet, die ihr gerne nutzen könnt. Für alle Spiele, die etwas mehr Platz benötigen - wie zum Beispiel eine ausgiebige Partie Wikinger Schach - ist die große Wiese hinter dem Haus (Schützenplatz) der perfekte Ort. Ihr gelangt direkt über die Pforte hinter dem Gartenhäuschen auf die Wiese. Wir wünschen euch ganz viel Spaß!</p>
-            </div>
-            <div class="games-container">
-                
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Ringwerfen</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <p>Ringwerfen ist ein ruhiges, leichtes Geschicklichkeitsspiel für Kinder und Erwachsene. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
-                        
-                        <h4>Ziel des Spiels</h4>
-                        <p>Mit den Wurfringen möglichst viele Punkte erzielen, indem man die Ringe über die Pins mit den höchsten Punktzahlen wirft.</p>
-                        
-                        <h4>So wird gespielt</h4>
-                        <ul>
-                            <li>Das Zielkreuz mit den 5 Pins wird auf den Boden gelegt.</li>
-                            <li>Die Pins sind mit verschiedenen Punktzahlen beschriftet.</li>
-                            <li>Eine Grundlinie wird in ca. 4 m Entfernung markiert (Abstand kann je nach Alter und Fähigkeit angepasst werden).</li>
-                            <li>Jeder Spieler oder jedes Team wirft nacheinander mit 1 bis 5 Ringen.</li>
-                            <li>Jeder Ring, der über einem Pin landet, bringt die entsprechende Punktzahl.</li>
-                        </ul>
-                        
-                        <h4>Wertung</h4>
-                        <ul>
-                            <li>Die Punkte aller geworfenen Ringe werden addiert.</li>
-                            <li>Wer die höchste Gesamtpunktzahl erreicht, gewinnt die Runde.</li>
-                        </ul>
-                        
-                        <h4>Varianten</h4>
-                        <ul>
-                            <li>Bis zu 5 Spieler können gleichzeitig mit je einem Ring antreten.</li>
-                            <li>Alternativ können beliebig viele Spieler mit 5 oder weniger Ringen spielen.</li>
-                            <li>Nach jedem Durchgang kann die Entfernung zur Grundlinie vergrößert werden, um den Schwierigkeitsgrad zu steigern.</li>
-                        </ul>
+        <!-- Freizeit Tab -->
+        <section id="freizeit" class="tab-content">
+            <div class="freizeit-container">
+                <div class="freizeit-subnav" role="tablist" aria-label="Freizeit Kategorien">
+                    <button class="freizeit-subtab-button active" data-freizeit-tab="spiele" role="tab" aria-selected="true">Spiele</button>
+                    <button class="freizeit-subtab-button" data-freizeit-tab="fotos" role="tab" aria-selected="false">Fotos</button>
+                    <button class="freizeit-subtab-button" data-freizeit-tab="gaestebuch" role="tab" aria-selected="false">Gästebuch</button>
+                </div>
+
+                <div id="freizeit-spiele" class="freizeit-subtab-content active">
+                    <div class="games-container-wrapper">
+                        <p class="games-intro">Wir haben eine Auswahl an Spielen für euch vorbereitet, die ihr gerne nutzen könnt. Für alle Spiele, die etwas mehr Platz benötigen - wie zum Beispiel eine ausgiebige Partie Wikinger Schach - ist die große Wiese hinter dem Haus (Schützenplatz) der perfekte Ort. Ihr gelangt direkt über die Pforte hinter dem Gartenhäuschen auf die Wiese. Wir wünschen euch ganz viel Spaß!</p>
+                    </div>
+                    <div class="games-container">
+                        <div class="game-card">
+                            <button class="game-header">
+                                <h3>Ringwerfen</h3>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="game-content">
+                                <p>Ringwerfen ist ein ruhiges, leichtes Geschicklichkeitsspiel für Kinder und Erwachsene. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
+                                <h4>Ziel des Spiels</h4>
+                                <p>Mit den Wurfringen möglichst viele Punkte erzielen, indem man die Ringe über die Pins mit den höchsten Punktzahlen wirft.</p>
+                                <h4>So wird gespielt</h4>
+                                <ul>
+                                    <li>Das Zielkreuz mit den 5 Pins wird auf den Boden gelegt.</li>
+                                    <li>Die Pins sind mit verschiedenen Punktzahlen beschriftet.</li>
+                                    <li>Eine Grundlinie wird in ca. 4 m Entfernung markiert (Abstand kann je nach Alter und Fähigkeit angepasst werden).</li>
+                                    <li>Jeder Spieler oder jedes Team wirft nacheinander mit 1 bis 5 Ringen.</li>
+                                    <li>Jeder Ring, der über einem Pin landet, bringt die entsprechende Punktzahl.</li>
+                                </ul>
+                                <h4>Wertung</h4>
+                                <ul>
+                                    <li>Die Punkte aller geworfenen Ringe werden addiert.</li>
+                                    <li>Wer die höchste Gesamtpunktzahl erreicht, gewinnt die Runde.</li>
+                                </ul>
+                                <h4>Varianten</h4>
+                                <ul>
+                                    <li>Bis zu 5 Spieler können gleichzeitig mit je einem Ring antreten.</li>
+                                    <li>Alternativ können beliebig viele Spieler mit 5 oder weniger Ringen spielen.</li>
+                                    <li>Nach jedem Durchgang kann die Entfernung zur Grundlinie vergrößert werden, um den Schwierigkeitsgrad zu steigern.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="game-card">
+                            <button class="game-header">
+                                <h3>Riesenmikado</h3>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="game-content">
+                                <p>Riesenmikado ist die XXL-Variante des klassischen Mikado-Spiels. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
+                                <h4>Ziel des Spiels</h4>
+                                <p>Die Stäbe sollen nacheinander aufgehoben werden, ohne dass sich ein anderer Stab bewegt. Je schwieriger der Stab, desto mehr Punkte gibt es.</p>
+                                <h4>So wird gespielt</h4>
+                                <ul>
+                                    <li>Die Stäbe werden zu einem Bündel zusammengehalten und fallen gelassen, sodass sie sich kreuz und quer verteilen.</li>
+                                    <li>Gespielt wird reihum: Wer an der Reihe ist, versucht einen Stab aufzunehmen, ohne die anderen zu bewegen.</li>
+                                    <li>Gelingt es, darf der Spieler weitermachen. Bewegt sich ein anderer Stab, ist der nächste Spieler dran.</li>
+                                    <li>In Teams wird gemeinsam gesammelt - die Punkte werden am Ende addiert.</li>
+                                </ul>
+                                <h4>Punktewertung</h4>
+                                <ul>
+                                    <li>Jeder Stab hat eine bestimmte Anzahl an Farbstrichen.</li>
+                                    <li>Beim Einsammeln werden die Striche gezählt.</li>
+                                    <li>Am Ende gewinnt das Team oder der Spieler mit den meisten gesammelten Strichen.</li>
+                                </ul>
+                                <h4>Spielende</h4>
+                                <ul>
+                                    <li>Wenn alle Stäbe eingesammelt wurden, werden die Punkte gezählt.</li>
+                                    <li>Das Team oder der Spieler mit der höchsten Punktzahl gewinnt.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="game-card">
+                            <button class="game-header">
+                                <h3>Shuffleboard</h3>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="game-content">
+                                <p>Shuffleboard ist ein Geschicklichkeitsspiel, bei dem Pucks über eine Bahn geschoben werden müssen. Es kann einzeln oder in Teams gespielt werden.</p>
+                                <h4>Ziel des Spiels</h4>
+                                <p>Die Pucks möglichst nah an das Ziel schieben oder in die höchsten Punktezonen platzieren.</p>
+                                <h4>So wird gespielt</h4>
+                                <ul>
+                                    <li>Die Spielbahn wird auf einer ebenen Fläche aufgebaut.</li>
+                                    <li>Jeder Spieler oder jedes Team erhält Pucks.</li>
+                                    <li>Abwechselnd werden die Pucks über die Bahn geschoben.</li>
+                                    <li>Ziel ist es, die Pucks in den markierten Zonen zu platzieren.</li>
+                                </ul>
+                                <h4>Wertung</h4>
+                                <ul>
+                                    <li>Je nach Zone, in der der Puck landet, gibt es unterschiedliche Punkte.</li>
+                                    <li>Pucks, die von der Bahn fallen, zählen nicht.</li>
+                                    <li>Das Team oder der Spieler mit der höchsten Punktzahl gewinnt.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="game-card">
+                            <button class="game-header">
+                                <h3>Leitergolf</h3>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="game-content">
+                                <p>Leitergolf (auch Leiterwurfspiel genannt) ist ein unterhaltsames Wurfspiel für draußen. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
+                                <h4>Ziel des Spiels</h4>
+                                <p>Mit den Bolas (zwei durch ein Seil verbundene Bälle) möglichst viele Punkte erzielen, indem man sie auf die Sprossen der Leiter wirft.</p>
+                                <h4>So wird gespielt</h4>
+                                <ul>
+                                    <li>Die Leitergestelle werden im Abstand von ca. 5 Metern aufgestellt.</li>
+                                    <li>Jeder Spieler oder jedes Team erhält 3 Bolas (meist in verschiedenen Farben).</li>
+                                    <li>Abwechselnd werfen die Spieler ihre Bolas auf die gegnerische Leiter.</li>
+                                    <li>Die Bolas sollen sich um die Sprossen wickeln und dort hängen bleiben.</li>
+                                    <li>Jede Sprosse hat einen unterschiedlichen Punktewert (meist: obere Sprosse 3 Punkte, mittlere 2 Punkte, untere 1 Punkt).</li>
+                                </ul>
+                                <h4>Wertung</h4>
+                                <ul>
+                                    <li>Nach jeder Runde werden die Punkte gezählt.</li>
+                                    <li>Nur Bolas, die fest um eine Sprosse gewickelt sind, zählen.</li>
+                                    <li>Das Spiel wird bis zu einer vereinbarten Punktzahl gespielt (z.B. 21 Punkte).</li>
+                                    <li>Wer zuerst die Zielpunktzahl erreicht, gewinnt.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="game-card">
+                            <button class="game-header">
+                                <h3>Wikinger Schach</h3>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="game-content">
+                                <p>Wikinger Schach, auch Kubb genannt, ist ein traditionelles skandinavisches Wurfspiel für draußen. Es wird in zwei Teams gespielt.</p>
+                                <h4>Ziel des Spiels</h4>
+                                <p>Alle gegnerischen Kubbs (Holzklötze) und zum Schluss den König in der Spielfeldmitte umwerfen.</p>
+                                <h4>So wird gespielt</h4>
+                                <ul>
+                                    <li>Das Spielfeld (ca. 5x8 Meter) wird mit den Eckstäben markiert.</li>
+                                    <li>Je 5 Kubbs werden auf den beiden Grundlinien aufgestellt, der König steht in der Mitte.</li>
+                                    <li>Die Teams werfen abwechselnd mit 6 Wurfhölzern auf die gegnerischen Kubbs.</li>
+                                    <li>Umgeworfene Kubbs werden vom Gegner ins eigene Feld geworfen und dort wieder aufgestellt (Feldkubbs).</li>
+                                    <li>In der nächsten Runde müssen zuerst alle Feldkubbs umgeworfen werden, bevor die Basiskubbs angegriffen werden dürfen.</li>
+                                </ul>
+                                <h4>Spielende</h4>
+                                <ul>
+                                    <li>Wenn alle gegnerischen Kubbs umgeworfen sind, darf das Team versuchen, den König zu treffen.</li>
+                                    <li>Wer den König umwirft, gewinnt das Spiel.</li>
+                                    <li>Achtung: Wird der König zu früh umgeworfen, verliert das Team sofort!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="game-card">
+                            <button class="game-header">
+                                <h3>Stakk</h3>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="game-content">
+                                <p>Stakk ist ein modernes Outdoor-Wurfspiel, das Geschicklichkeit und Strategie vereint. Es kann einzeln oder in Teams gespielt werden.</p>
+                                <h4>Ziel des Spiels</h4>
+                                <p>Mit den Wurfscheiben die eigenen Stapel bauen und die gegnerischen Stapel umwerfen, um als Erstes eine Reihe von 5 Scheiben zu erreichen.</p>
+                                <h4>So wird gespielt</h4>
+                                <ul>
+                                    <li>Die Spieler stehen in ca. 4-6 Meter Entfernung voneinander.</li>
+                                    <li>Jeder Spieler oder jedes Team erhält 8 Wurfscheiben in einer Farbe.</li>
+                                    <li>Abwechselnd werfen die Spieler ihre Scheiben auf die gegnerische Seite.</li>
+                                    <li>Eine Scheibe, die auf der Spielfläche landet, wird zum Stapel hinzugefügt.</li>
+                                    <li>Trifft man einen gegnerischen Stapel, wird dieser verkleinert oder zerstört.</li>
+                                </ul>
+                                <h4>Wertung und Spielende</h4>
+                                <ul>
+                                    <li>Wer zuerst einen Stapel von 5 Scheiben erreicht, gewinnt das Spiel.</li>
+                                    <li>Alternativ kann auf Punkte gespielt werden: Jede Scheibe im Stapel = 1 Punkt.</li>
+                                    <li>Das Team mit den meisten Punkten nach einer festgelegten Anzahl von Runden gewinnt.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Riesenmikado</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <p>Riesenmikado ist die XXL-Variante des klassischen Mikado-Spiels. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
-                        
-                        <h4>Ziel des Spiels</h4>
-                        <p>Die Stäbe sollen nacheinander aufgehoben werden, ohne dass sich ein anderer Stab bewegt. Je schwieriger der Stab, desto mehr Punkte gibt es.</p>
-                        
-                        <h4>So wird gespielt</h4>
-                        <ul>
-                            <li>Die Stäbe werden zu einem Bündel zusammengehalten und fallen gelassen, sodass sie sich kreuz und quer verteilen.</li>
-                            <li>Gespielt wird reihum: Wer an der Reihe ist, versucht einen Stab aufzunehmen, ohne die anderen zu bewegen.</li>
-                            <li>Gelingt es, darf der Spieler weitermachen. Bewegt sich ein anderer Stab, ist der nächste Spieler dran.</li>
-                            <li>In Teams wird gemeinsam gesammelt - die Punkte werden am Ende addiert.</li>
-                        </ul>
-                        
-                        <h4>Punktewertung</h4>
-                        <ul>
-                            <li>Jeder Stab hat eine bestimmte Anzahl an Farbstrichen.</li>
-                            <li>Beim Einsammeln werden die Striche gezählt.</li>
-                            <li>Am Ende gewinnt das Team oder der Spieler mit den meisten gesammelten Strichen.</li>
-                        </ul>
-                        
-                        <h4>Spielende</h4>
-                        <ul>
-                            <li>Wenn alle Stäbe eingesammelt wurden, werden die Punkte gezählt.</li>
-                            <li>Das Team oder der Spieler mit der höchsten Punktzahl gewinnt.</li>
-                        </ul>
+                <div id="freizeit-gaestebuch" class="freizeit-subtab-content">
+                    <div class="guestbook-box">
+                        <h3>Gästebuch</h3>
+                        <p>Unser Gästebuch liegt für euch bereit und freut sich über liebe Worte, Erinnerungen und kleine Wünsche für uns. Wenn ihr mögt, könnt ihr eure Fotos aus der Fotobox direkt ausdrucken und dazukleben.</p>
                     </div>
                 </div>
 
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Shuffleboard</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <p>Shuffleboard ist ein Geschicklichkeitsspiel, bei dem Pucks über eine Bahn geschoben werden müssen. Es kann einzeln oder in Teams gespielt werden.</p>
-                        
-                        <h4>Ziel des Spiels</h4>
-                        <p>Die Pucks möglichst nah an das Ziel schieben oder in die höchsten Punktezonen platzieren.</p>
-                        
-                        <h4>So wird gespielt</h4>
-                        <ul>
-                            <li>Die Spielbahn wird auf einer ebenen Fläche aufgebaut.</li>
-                            <li>Jeder Spieler oder jedes Team erhält Pucks.</li>
-                            <li>Abwechselnd werden die Pucks über die Bahn geschoben.</li>
-                            <li>Ziel ist es, die Pucks in den markierten Zonen zu platzieren.</li>
-                        </ul>
-                        
-                        <h4>Wertung</h4>
-                        <ul>
-                            <li>Je nach Zone, in der der Puck landet, gibt es unterschiedliche Punkte.</li>
-                            <li>Pucks, die von der Bahn fallen, zählen nicht.</li>
-                            <li>Das Team oder der Spieler mit der höchsten Punktzahl gewinnt.</li>
-                        </ul>
+                <div id="freizeit-fotos" class="freizeit-subtab-content">
+                    <div class="photos-container">
+                        <div class="photos-box">
+                            <h3>Fotobox</h3>
+                            <p class="photos-intro">Im Wohnzimmer steht eine Fotobox für euch bereit! Haltet die schönsten Momente des Tages fest – alle Fotos werden automatisch digital gespeichert. Für unser Gästebuch und als persönliche Erinnerung habt ihr die Möglichkeit, eure Lieblingsbilder direkt auszudrucken. Da die Druckkapazität begrenzt ist, bitten wir euch, damit sorgsam umzugehen.</p>
+                        </div>
+                    </div>
+
+                    <div class="photos-container">
+                        <div class="photos-box photos-snapshots-box">
+                            <h3>Schnappschüsse</h3>
+                            <p>Habt ihr im Laufe des Tages besondere, lustige oder emotionale Momente mit eurem Smartphone eingefangen? Wir würden uns riesig freuen, wenn ihr diese Erinnerungen mit uns teilt und sie in unser gemeinsames Fotoalbum hochladet. Scannt dafür einfach ganz unkompliziert den QR-Code. Falls ihr etwas Inspiration für tolle Motive sucht, schaut mal hier vorbei:</p>
+                        </div>
+
+                        <div class="photo-challenge">
+                            <h3>Inspiration</h3>
+                            <div class="challenge-grid">
+                                <div class="challenge-item">
+                                    <span class="challenge-number">1</span>
+                                    <p>Mache ein Foto mit dem Gast, der den kürzesten Anreiseweg hatte.</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">2</span>
+                                    <p>Fotografiere das lustigste Tanzbild</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">3</span>
+                                    <p>Halte einen besonderen Moment beim Spielen fest</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">4</span>
+                                    <p>Mache ein Selfie mit dem Brautpaar</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">5</span>
+                                    <p>Fotografiere das schönste Lächeln des Tages</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">6</span>
+                                    <p>Mache ein Gruppenfoto mit deinem Tisch</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">7</span>
+                                    <p>Fotografiere das schönste Outfit</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">8</span>
+                                    <p>Halte einen spontanen Moment fest</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">9</span>
+                                    <p>Mache ein Foto beim Grillbuffet</p>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-number">10</span>
+                                    <p>Mache ein Foto mit einer Person, die du vor dieser Hochzeit noch nicht kanntest.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="photo-album-notice">
+                            <p><strong>Hinweis:</strong> Aus datenschutzrechtlichen Gründen steht das gemeinsame Fotoalbum nur über einen QR-Code zur Verfügung und ist nicht auf dieser Webseite zu finden. Den QR-Code findet ihr vor Ort bei der Hochzeit.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Leitergolf</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <p>Leitergolf (auch Leiterwurfspiel genannt) ist ein unterhaltsames Wurfspiel für draußen. Es kann einzeln, zu zweit oder in Teams gespielt werden.</p>
-                        
-                        <h4>Ziel des Spiels</h4>
-                        <p>Mit den Bolas (zwei durch ein Seil verbundene Bälle) möglichst viele Punkte erzielen, indem man sie auf die Sprossen der Leiter wirft.</p>
-                        
-                        <h4>So wird gespielt</h4>
-                        <ul>
-                            <li>Die Leitergestelle werden im Abstand von ca. 5 Metern aufgestellt.</li>
-                            <li>Jeder Spieler oder jedes Team erhält 3 Bolas (meist in verschiedenen Farben).</li>
-                            <li>Abwechselnd werfen die Spieler ihre Bolas auf die gegnerische Leiter.</li>
-                            <li>Die Bolas sollen sich um die Sprossen wickeln und dort hängen bleiben.</li>
-                            <li>Jede Sprosse hat einen unterschiedlichen Punktewert (meist: obere Sprosse 3 Punkte, mittlere 2 Punkte, untere 1 Punkt).</li>
-                        </ul>
-                        
-                        <h4>Wertung</h4>
-                        <ul>
-                            <li>Nach jeder Runde werden die Punkte gezählt.</li>
-                            <li>Nur Bolas, die fest um eine Sprosse gewickelt sind, zählen.</li>
-                            <li>Das Spiel wird bis zu einer vereinbarten Punktzahl gespielt (z.B. 21 Punkte).</li>
-                            <li>Wer zuerst die Zielpunktzahl erreicht, gewinnt.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Wikinger Schach</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <p>Wikinger Schach, auch Kubb genannt, ist ein traditionelles skandinavisches Wurfspiel für draußen. Es wird in zwei Teams gespielt.</p>
-                        
-                        <h4>Ziel des Spiels</h4>
-                        <p>Alle gegnerischen Kubbs (Holzklötze) und zum Schluss den König in der Spielfeldmitte umwerfen.</p>
-                        
-                        <h4>So wird gespielt</h4>
-                        <ul>
-                            <li>Das Spielfeld (ca. 5x8 Meter) wird mit den Eckstäben markiert.</li>
-                            <li>Je 5 Kubbs werden auf den beiden Grundlinien aufgestellt, der König steht in der Mitte.</li>
-                            <li>Die Teams werfen abwechselnd mit 6 Wurfhölzern auf die gegnerischen Kubbs.</li>
-                            <li>Umgeworfene Kubbs werden vom Gegner ins eigene Feld geworfen und dort wieder aufgestellt (Feldkubbs).</li>
-                            <li>In der nächsten Runde müssen zuerst alle Feldkubbs umgeworfen werden, bevor die Basiskubbs angegriffen werden dürfen.</li>
-                        </ul>
-                        
-                        <h4>Spielende</h4>
-                        <ul>
-                            <li>Wenn alle gegnerischen Kubbs umgeworfen sind, darf das Team versuchen, den König zu treffen.</li>
-                            <li>Wer den König umwirft, gewinnt das Spiel.</li>
-                            <li>Achtung: Wird der König zu früh umgeworfen, verliert das Team sofort!</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="game-card">
-                    <button class="game-header">
-                        <h3>Stakk</h3>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="game-content">
-                        <p>Stakk ist ein modernes Outdoor-Wurfspiel, das Geschicklichkeit und Strategie vereint. Es kann einzeln oder in Teams gespielt werden.</p>
-                        
-                        <h4>Ziel des Spiels</h4>
-                        <p>Mit den Wurfscheiben die eigenen Stapel bauen und die gegnerischen Stapel umwerfen, um als Erstes eine Reihe von 5 Scheiben zu erreichen.</p>
-                        
-                        <h4>So wird gespielt</h4>
-                        <ul>
-                            <li>Die Spieler stehen in ca. 4-6 Meter Entfernung voneinander.</li>
-                            <li>Jeder Spieler oder jedes Team erhält 8 Wurfscheiben in einer Farbe.</li>
-                            <li>Abwechselnd werfen die Spieler ihre Scheiben auf die gegnerische Seite.</li>
-                            <li>Eine Scheibe, die auf der Spielfläche landet, wird zum Stapel hinzugefügt.</li>
-                            <li>Trifft man einen gegnerischen Stapel, wird dieser verkleinert oder zerstört.</li>
-                        </ul>
-                        
-                        <h4>Wertung und Spielende</h4>
-                        <ul>
-                            <li>Wer zuerst einen Stapel von 5 Scheiben erreicht, gewinnt das Spiel.</li>
-                            <li>Alternativ kann auf Punkte gespielt werden: Jede Scheibe im Stapel = 1 Punkt.</li>
-                            <li>Das Team mit den meisten Punkten nach einer festgelegten Anzahl von Runden gewinnt.</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -371,68 +434,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Fotos Tab
-        <section id="fotos" class="tab-content">
-            <div class="photos-container">
-                <p class="photos-intro">Im Wohnzimmer steht eine Fotobox für euch bereit! Haltet die schönsten Momente des Tages fest – alle Fotos werden automatisch digital gespeichert. Für unser Gästebuch und als persönliche Erinnerung habt ihr die Möglichkeit, eure Lieblingsbilder direkt auszudrucken. Da die Druckkapazität begrenzt ist, bitten wir euch, damit sorgsam umzugehen.</p>
-            </div>
-
-            <div class="photos-container">
-                <div class="photo-challenge">
-                    <h3>Fotochallenge</h3>
-                    <p class="challenge-intro">Macht mit bei unserer Fotochallenge! Versucht, möglichst viele dieser besonderen Momente festzuhalten:</p>
-                    <div class="challenge-grid">
-                        <div class="challenge-item">
-                            <span class="challenge-number">1</span>
-                            <p>Mache ein Foto mit allen Kindern</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">2</span>
-                            <p>Fotografiere das lustigste Tanzbild</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">3</span>
-                            <p>Halte einen besonderen Moment beim Spielen fest</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">4</span>
-                            <p>Mache ein Selfie mit dem Brautpaar</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">5</span>
-                            <p>Fotografiere das schönste Lächeln des Tages</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">6</span>
-                            <p>Mache ein Gruppenfoto mit deinem Tisch</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">7</span>
-                            <p>Fotografiere das kreativste Outfit</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">8</span>
-                            <p>Halte einen spontanen Moment fest</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">9</span>
-                            <p>Mache ein Foto beim Grillbuffet</p>
-                        </div>
-                        <div class="challenge-item">
-                            <span class="challenge-number">10</span>
-                            <p>Fotografiere den schönsten Sonnenuntergang</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="photo-album-notice">
-                    <p><strong>Hinweis:</strong> Aus datenschutzrechtlichen Gründen steht das gemeinsame Fotoalbum nur über einen QR-Code zur Verfügung und ist nicht auf dieser Webseite zu finden. Den QR-Code findet ihr vor Ort bei der Hochzeit.</p>
-                </div>
-            </div>
-
-        </section>
-        -->
 
     </main>
 
