@@ -1927,6 +1927,9 @@ li {
         margin-bottom: 0.55rem;
         font-size: clamp(1.1rem, 2.2vw, 1.35rem);
         letter-spacing: 0.09em;
+        font-family: var(--font-heading);
+        color: var(--dunkel-rosa);
+        font-weight: 500;
     }
 
     .timeline-event-preview {
