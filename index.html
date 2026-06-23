@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Tim & Lena - Hochzeit 27.06.2026</title>
+    <title>Lena und Tim - Hochzeit 27.06.2026</title>
     <meta name="description" content="Hochzeitswebseite Tim & Lena - 27.06.2026">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles copy.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <h1>TIM & LENA</h1>
-        <p class="date">27.06.2026</p>
+    <!-- Cosmic Hero -->
+    <header class="cosmic-hero" aria-label="Willkommen Lena und Tim">
+        <div class="cosmic-hero__glow" aria-hidden="true"></div>
+        <div class="cosmic-hero__content">
+            <p class="cosmic-hero__kicker">27.06.2026</p>
+            <h1>Lena &amp; Tim</h1>
+            <svg class="cosmic-link" viewBox="0 0 320 64" role="img" aria-label="Verbindende Sternenkonstellation">
+                <title>Verbindende Sternenkonstellation</title>
+                <path d="M24 44 C86 10, 130 10, 160 32 C190 54, 234 54, 296 20" />
+                <path d="M24 20 C84 54, 130 54, 160 32 C190 10, 236 10, 296 44" />
+                <circle cx="24" cy="44" r="2.6" />
+                <circle cx="24" cy="20" r="2.1" />
+                <circle cx="160" cy="32" r="3.1" />
+                <circle cx="296" cy="20" r="2.6" />
+                <circle cx="296" cy="44" r="2.1" />
+            </svg>
+        </div>
     </header>
 
     <!-- Tab Navigation -->
@@ -119,42 +132,49 @@
 
         <!-- Ablauf Tab -->
         <section id="ablauf" class="tab-content">
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-time">14:30 Uhr</div>
-                    <div class="timeline-content">
+            <div class="timeline-modern" aria-label="Ablaufplan Hochzeit">
+                <article class="timeline-event">
+                    <span class="timeline-orbit-dot" aria-hidden="true"></span>
+                    <div class="timeline-event-card">
+                        <p class="timeline-event-time">14:30 Uhr</p>
                         <h3>Ankunft der Gäste</h3>
-                        <p>Wir freuen uns, euch zu unserer Hochzeit willkommen zu heißen.</p>
+                        <p class="timeline-event-preview">Wir freuen uns, euch zu unserer Hochzeit willkommen zu heißen.</p>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">15:00 Uhr</div>
-                    <div class="timeline-content">
+                </article>
+
+                <article class="timeline-event">
+                    <span class="timeline-orbit-dot" aria-hidden="true"></span>
+                    <div class="timeline-event-card">
+                        <p class="timeline-event-time">15:00 Uhr</p>
                         <h3>Kaffee & Kuchen</h3>
-                        <p>Gemeinsam schneiden wir die Hochzeitstorte an. Dazu gibt es Kaffee und weiteren Kuchen.</p>
+                        <p class="timeline-event-preview">Gemeinsam schneiden wir die Hochzeitstorte an. Dazu gibt es Kaffee und weiteren Kuchen.</p>
                     </div>
-                </div>
-                
-                <!-- Freizeit Hinweis -->
-                <div class="timeline-divider">
-                    <div class="freizeit-text">
-                        <strong>Im Anschluss:</strong> Zeit für gemütliches Beisammensein. Solltet ihr zwischendurch Lust auf etwas Abwechslung haben, schaut gerne unter <a href="#freizeit" class="spiele-link" data-tab-target="freizeit">Freizeit</a> nach möglichen Ideen und Aktivitäten.<br><br>
-                        
+                </article>
+
+                <article class="timeline-event">
+                    <span class="timeline-orbit-dot" aria-hidden="true"></span>
+                    <div class="timeline-event-card">
+                        <h3>Im Anschluss</h3>
+                        <p class="timeline-event-preview">Zeit für gemütliches Beisammensein. Solltet ihr zwischendurch Lust auf etwas Abwechslung haben, schaut gerne unter <a href="#freizeit" class="spiele-link" data-tab-target="freizeit">Freizeit</a> nach möglichen Ideen und Aktivitäten.</p>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-time">18:00 Uhr</div>
-                    <div class="timeline-content">
+                </article>
+
+                <article class="timeline-event">
+                    <span class="timeline-orbit-dot" aria-hidden="true"></span>
+                    <div class="timeline-event-card">
+                        <p class="timeline-event-time">18:00 Uhr</p>
                         <h3>Abendessen</h3>
-                        <p>Gemeinsames Abendessen vom Grillbuffet</p>
+                        <p class="timeline-event-preview">Gemeinsames Abendessen vom Grillbuffet.</p>
                     </div>
-                </div>
-                
-                <!-- Abend Hinweis -->
-                <div class="timeline-divider">
-                    <p class="freizeit-text"><strong>Im Anschluss:</strong> Musik & Snacks. Wer Lust hat, kann tanzen oder den Abend bei guten Gesprächen genießen. Als Stärkung für den Abend wartet frisches Popcorn direkt aus der Maschine auf euch, zusammen mit anderen kleinen Snacks.</p>
-                </div>
+                </article>
+
+                <article class="timeline-event">
+                    <span class="timeline-orbit-dot" aria-hidden="true"></span>
+                    <div class="timeline-event-card">
+                        <h3>Im Anschluss</h3>
+                        <p class="timeline-event-preview">Musik & Snacks. Wer Lust hat, kann tanzen oder den Abend bei guten Gesprächen genießen. Als Stärkung für die Nacht wartet frisches Popcorn direkt aus der Maschine auf euch, zusammen mit anderen kleinen Snacks.</p>
+                    </div>
+                </article>
             </div>
         </section>
 
